@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "832032186971",
+    "firebase_url": "https://travia-4a70d.firebaseio.com",
+    "project_id": "travia-4a70d",
+    "storage_bucket": "travia-4a70d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832032186971:android:801b59fa45ac344d4ad57e",
+        "android_client_info": {
+          "package_name": "com.travia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832032186971-fki1sa7kklak7qfaoe3j54b6l1nquuo5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.travia",
+            "certificate_hash": "678fe706118fcf7d6edc6a238c175ee8d290a1f7"
+          }
+        },
+        {
+          "client_id": "832032186971-vlcsflnvlaphuqa023kg9egqskaarm6r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.travia",
+            "certificate_hash": "96f701e6614b596c9a53321019c1e24b58aecf3e"
+          }
+        },
+        {
+          "client_id": "832032186971-edi3f5v9fh76obskgjf2imnuned0fbla.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.travia",
+            "certificate_hash": "8f09c657ea897d262465f46f149083bac591cf72"
+          }
+        },
+        {
+          "client_id": "832032186971-knasn8sqm4r5p815etdrdi9o6vu7sgk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-KLFj6GS_EF8kSS9Ig0Qoi-NqgG8NjPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832032186971-knasn8sqm4r5p815etdrdi9o6vu7sgk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
