@@ -1,12 +1,19 @@
 package com.travia
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import com.travia.databinding.ActivityLoginBinding
 import com.travia.utils.LoadingDialogUtil
+import com.travia.utils.TAG_GOOGLE_CLIENT_ID
 import com.travia.utils.showToast
 
 class LoginActivity : AppCompatActivity() {
@@ -14,6 +21,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var loadingDialog: LoadingDialogUtil
+
+    private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var gso: GoogleSignInOptions
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +39,15 @@ class LoginActivity : AppCompatActivity() {
         //init Firebase Auth
         auth = FirebaseAuth.getInstance()
 
+        //init Google sign in client
+        gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(TAG_GOOGLE_CLIENT_ID)
+            .requestEmail()
+            .build()
+
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
+
+
         loadingDialog = LoadingDialogUtil(this)
 
         //View binding with ktx in action
@@ -37,12 +56,19 @@ class LoginActivity : AppCompatActivity() {
                 checkForm()
             }
             cvLoginWithGoogle.setOnClickListener {
-                Log.d(TAG, "init: login by gmail")
+                loginWithGoogle()
             }
         }
     }
 
-    //Check / validate form for login (email and password)
+    //launch login with google using
+    private fun loginWithGoogle() {
+        loadingDialog.show()
+        val signInGoogleIntent = googleSignInClient.signInIntent
+        startActivityForResult(signInGoogleIntent, REQ_SIGN_IN_GOOGLE)
+    }
+
+    //Check / validate form for login by email and password
     private fun checkForm() {
         binding.apply {
             when {
@@ -86,7 +112,43 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == REQ_SIGN_IN_GOOGLE){
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+
+            try {
+                val account = task.getResult(ApiException::class.java)
+                Log.d(TAG, "onActivityResult: ${account?.id}")
+                firebaseAuthWithGoogle(account?.idToken!!)
+            } catch (e: ApiException){
+                Log.d(TAG, "onActivityResult: failed to login with google : ${e.message}")
+                showToast(this, "Login dengan Google gagal")
+                loadingDialog.dismiss()
+            }
+        }
+    }
+
+    //proceed firebase auth with token provided by google sign in client
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val userCredential = GoogleAuthProvider.getCredential(idToken, null)
+        auth.signInWithCredential(userCredential)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful){
+                    Log.d(TAG, "firebaseAuthWithGoogle: login success")
+                    showToast(this, "Login dengan Google berhasil")
+                    loadingDialog.dismiss()
+                } else{
+                    Log.d(TAG, "firebaseAuthWithGoogle: login failed ${task.exception}")
+                    showToast(this, "Login dengan Google gagal")
+                    loadingDialog.dismiss()
+                }
+            }
+    }
+
     companion object {
         var TAG = LoginActivity::class.java.simpleName
+        var REQ_SIGN_IN_GOOGLE = 22
     }
 }
