@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Travia</string>
     <string name="register">REGISTER</string>
+    <string name="mitra">Mitra Usaha</string>
     <string name="travia">Travia</string>
     <string name="daftar_jadi">Daftar jadi Mitra Travia?</string>
     <string name="daftar_mitr">Daftar Mitra</string>

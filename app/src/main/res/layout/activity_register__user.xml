@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/register_mi"
-    tools:context=".Register_Mitra">
+    tools:context=".Register_User">
     <View
         android:id="@+id/ellipse_5"
         android:layout_width="327dp"
@@ -39,31 +39,17 @@
         android:textAppearance="@style/travia"
         android:gravity="center_horizontal|center_vertical"
         />
-
     <TextView
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="66dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/register"
         android:textAppearance="@style/register" />
-
-    <TextView
-        android:id="@+id/Mitra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="117dp"
-        android:layout_marginTop="97dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/mitra"
-        android:textAppearance="@style/register" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/rectangle_1"
         android:layout_width="365dp"
@@ -176,6 +162,30 @@
         android:textSize="18sp"
         android:elevation="10dp"
         android:shadowRadius="10dp"/>
+
+    <TextView
+        android:id="@+id/daftar_jadi"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="74dp"
+        android:layout_marginTop="519dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/daftar_jadi"
+        android:textAppearance="@style/daftar_jadi" />
+
+    <TextView
+        android:id="@+id/daftar_mitr"
+        android:layout_width="72dp"
+        android:layout_height="17dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="241dp"
+        android:layout_marginTop="520dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/daftar_mitr"
+        android:textAppearance="@style/daftar_mitr" />
 
     <View
         android:id="@+id/vector_7"
