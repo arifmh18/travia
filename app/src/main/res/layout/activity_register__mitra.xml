@@ -7,38 +7,38 @@
     android:layout_height="match_parent"
     android:background="@drawable/register_mi"
     tools:context=".Register_Mitra">
+
     <View
         android:id="@+id/ellipse_5"
         android:layout_width="327dp"
         android:layout_height="351dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="85dp"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="85dp"
         android:layout_marginTop="-174dp"
-        android:background="@drawable/ellipse_5"
-        />
+        android:background="@drawable/ellipse_5" />
+
     <View
         android:id="@+id/ellipse_4"
         android:layout_width="312dp"
         android:layout_height="269dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="-132dp"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="-132dp"
         android:layout_marginTop="-42dp"
-        android:background="@drawable/ellipse_4"
-        />
+        android:background="@drawable/ellipse_4" />
+
     <TextView
         android:id="@+id/travia"
         android:layout_width="75dp"
         android:layout_height="36dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="19dp"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="19dp"
         android:layout_marginTop="2dp"
-        android:text="@string/travia"
-        android:textAppearance="@style/travia"
         android:gravity="center_horizontal|center_vertical"
-        />
+        android:text="@string/travia"
+        android:textAppearance="@style/travia" />
 
     <TextView
         android:id="@+id/register"
@@ -66,21 +66,23 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/rectangle_1"
-        android:layout_width="365dp"
-        android:layout_height="43dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="23dp"
         android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="23dp"
         android:layout_marginTop="152dp"
-        android:background="@drawable/rectangle_1"
         android:adjustViewBounds="true"
+        android:background="@drawable/rectangle_1"
         app:cardCornerRadius="5dp"
         app:cardElevation="10dp">
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
             android:textColor="#000">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
@@ -92,20 +94,22 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/rectangle_2"
-        android:layout_width="365dp"
-        android:layout_height="43dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="23dp"
         android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="23dp"
         android:layout_marginTop="225dp"
         android:background="@drawable/rectangle_1"
         app:cardCornerRadius="5dp"
         app:cardElevation="10dp">
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nama"
             android:textColor="#000">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/nama"
                 android:layout_width="match_parent"
@@ -114,22 +118,25 @@
 
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/rectangle_3"
-        android:layout_width="365dp"
-        android:layout_height="43dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="23dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="23dp"
         android:layout_marginTop="298dp"
         android:background="@drawable/rectangle_1"
         app:cardCornerRadius="5dp"
         app:cardElevation="10dp">
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="No.Telp"
             android:textColor="#000">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/notelp"
                 android:layout_width="match_parent"
@@ -138,22 +145,25 @@
 
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/rectangle_4"
-        android:layout_width="365dp"
-        android:layout_height="43dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="23dp"
         android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="23dp"
         android:layout_marginTop="371dp"
         android:background="@drawable/rectangle_1"
         app:cardCornerRadius="5dp"
         app:cardElevation="10dp">
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
             android:textColor="#000">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
@@ -162,20 +172,20 @@
 
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.cardview.widget.CardView>
+
     <Button
         android:id="@+id/btn_register"
-        android:layout_width="365dp"
-        android:layout_height="51dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="23dp"
         android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="23dp"
         android:layout_marginTop="445dp"
         android:background="@drawable/register"
-        android:text="Masuk"
-        android:textColor="@color/hitam"
-        android:textSize="18sp"
         android:elevation="10dp"
-        android:shadowRadius="10dp"/>
+        android:text="Daftar"
+        android:textColor="@color/hitam"
+        android:textSize="18sp" />
 
     <View
         android:id="@+id/vector_7"
@@ -211,11 +221,11 @@
 
     <Button
         android:id="@+id/google_login"
-        android:layout_width="365dp"
-        android:layout_height="51dp"
-        android:layout_alignParentLeft="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="23dp"
+        android:layout_marginHorizontal="23dp"
         android:layout_marginTop="589dp"
         android:layout_marginBottom="@dimen/garis"
         android:background="@drawable/common_google_signin_btn_text_light"
