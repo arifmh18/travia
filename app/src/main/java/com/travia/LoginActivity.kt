@@ -39,6 +39,11 @@ class LoginActivity : AppCompatActivity() {
         //init Firebase Auth
         auth = FirebaseAuth.getInstance()
 
+        if (auth.currentUser != null){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
         //init Google sign in client
         gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(TAG_GOOGLE_CLIENT_ID)
@@ -98,6 +103,9 @@ class LoginActivity : AppCompatActivity() {
                     showToast(this, "Login berhasil")
                     loadingDialog.dismiss()
 
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+
                     /**
                      * TODO : Check user login role
                      *          if user ->  then go to wisatawan layout
@@ -139,6 +147,8 @@ class LoginActivity : AppCompatActivity() {
                     Log.d(TAG, "firebaseAuthWithGoogle: login success")
                     showToast(this, "Login dengan Google berhasil")
                     loadingDialog.dismiss()
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
                 } else{
                     Log.d(TAG, "firebaseAuthWithGoogle: login failed ${task.exception}")
                     showToast(this, "Login dengan Google gagal")

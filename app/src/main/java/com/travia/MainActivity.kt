@@ -25,10 +25,10 @@ class MainActivity : AppCompatActivity() {
         view_pager.adapter = adapter
         TabLayoutMediator(
             tabLayout,
-            view_pager,
-            TabLayoutMediator.TabConfigurationStrategy { tab, position ->
-                tab.text = menuText[position]
-                tab.icon = ResourcesCompat.getDrawable(resources, menuIcon[position], null)
-            }).attach()
+            view_pager
+        ) { tab, position ->
+            tab.text = menuText[position]
+            tab.icon = ResourcesCompat.getDrawable(resources, menuIcon[position], null)
+        }.attach()
     }
 }

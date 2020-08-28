@@ -3,10 +3,7 @@ package com.travia.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.travia.ui.fragment.BerandaFragment
-import com.travia.ui.fragment.KeranjangFragment
-import com.travia.ui.fragment.PesanFragment
-import com.travia.ui.fragment.ProfilFragment
+import com.travia.ui.fragment.*
 
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
     FragmentStateAdapter(fragmentActivity) {
@@ -20,7 +17,7 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> {
-                BerandaFragment()
+                HomeFragment()
             }
             1 -> {
                 KeranjangFragment()
