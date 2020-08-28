@@ -184,7 +184,7 @@
         android:background="@drawable/register"
         android:elevation="10dp"
         android:text="Daftar"
-        android:textColor="@color/hitam"
+        android:textColor="@android:color/black"
         android:textSize="18sp" />
 
     <View

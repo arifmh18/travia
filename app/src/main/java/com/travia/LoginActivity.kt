@@ -63,6 +63,9 @@ class LoginActivity : AppCompatActivity() {
             cvLoginWithGoogle.setOnClickListener {
                 loginWithGoogle()
             }
+            tvToRegister.setOnClickListener {
+                startActivity(Intent(this@LoginActivity, Register_User::class.java))
+            }
         }
     }
 

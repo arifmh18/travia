@@ -172,7 +172,7 @@
         android:background="@drawable/register"
         android:elevation="10dp"
         android:text="Masuk"
-        android:textColor="@color/hitam"
+        android:textColor="@android:color/black"
         android:textSize="18sp" />
 
     <TextView
