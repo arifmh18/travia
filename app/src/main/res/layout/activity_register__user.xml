@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register_mi"
+    tools:context=".Register_User">
+    <View
+        android:id="@+id/ellipse_5"
+        android:layout_width="327dp"
+        android:layout_height="351dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="85dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-174dp"
+        android:background="@drawable/ellipse_5"
+        />
+    <View
+        android:id="@+id/ellipse_4"
+        android:layout_width="312dp"
+        android:layout_height="269dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="-132dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-42dp"
+        android:background="@drawable/ellipse_4"
+        />
+    <TextView
+        android:id="@+id/travia"
+        android:layout_width="75dp"
+        android:layout_height="36dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="19dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="2dp"
+        android:text="@string/travia"
+        android:textAppearance="@style/travia"
+        android:gravity="center_horizontal|center_vertical"
+        />
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="66dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/register"
+        android:textAppearance="@style/register" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rectangle_1"
+        android:layout_width="365dp"
+        android:layout_height="43dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="23dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="152dp"
+        android:background="@drawable/rectangle_1"
+        android:adjustViewBounds="true"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textColor="#000">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rectangle_2"
+        android:layout_width="365dp"
+        android:layout_height="43dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="23dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="225dp"
+        android:background="@drawable/rectangle_1"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama"
+            android:textColor="#000">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rectangle_3"
+        android:layout_width="365dp"
+        android:layout_height="43dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="23dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="298dp"
+        android:background="@drawable/rectangle_1"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="No.Telp"
+            android:textColor="#000">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/notelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rectangle_4"
+        android:layout_width="365dp"
+        android:layout_height="43dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="23dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="371dp"
+        android:background="@drawable/rectangle_1"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textColor="#000">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="365dp"
+        android:layout_height="51dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="23dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="445dp"
+        android:background="@drawable/register"
+        android:text="Masuk"
+        android:textColor="@color/hitam"
+        android:textSize="18sp"
+        android:elevation="10dp"
+        android:shadowRadius="10dp"/>
+
+    <TextView
+        android:id="@+id/daftar_jadi"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="74dp"
+        android:layout_marginTop="519dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/daftar_jadi"
+        android:textAppearance="@style/daftar_jadi" />
+
+    <TextView
+        android:id="@+id/daftar_mitr"
+        android:layout_width="72dp"
+        android:layout_height="17dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="241dp"
+        android:layout_marginTop="520dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/daftar_mitr"
+        android:textAppearance="@style/daftar_mitr" />
+
+    <View
+        android:id="@+id/vector_7"
+        android:layout_width="100dp"
+        android:layout_height="2dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="221dp"
+        android:layout_marginTop="561dp"
+        android:background="@drawable/vector_7" />
+
+    <TextView
+        android:id="@+id/atau"
+        android:layout_width="32dp"
+        android:layout_height="22dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="188dp"
+        android:layout_marginTop="551dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="atau"
+        android:textAppearance="@style/atau" />
+
+    <View
+        android:id="@+id/vector_8"
+        android:layout_width="100dp"
+        android:layout_height="2dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="87dp"
+        android:layout_marginTop="561dp"
+        android:background="@drawable/vector_7" />
+
+    <Button
+        android:id="@+id/google_login"
+        android:layout_width="365dp"
+        android:layout_height="51dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="589dp"
+        android:layout_marginBottom="@dimen/garis"
+        android:background="@drawable/common_google_signin_btn_text_light"
+        android:text="Masuk Dengan Google"
+        android:textAllCaps="false"
+        android:textColor="@color/singup"
+        android:textSize="16sp" />
+</RelativeLayout>
