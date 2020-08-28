@@ -86,15 +86,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imageView3"
+            <com.synnapps.carouselview.CarouselView
+                android:id="@+id/carouselViewHome"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/wisata_pujon_kidul"
+                app:slideInterval="1500"
+                app:indicatorGravity="bottom|center_horizontal"
+                app:fillColor="@color/colorPrimary"
+                app:pageColor="@android:color/white"
+                app:snap="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView3"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="200dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/wisata_pujon_kidul"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
             <TextView
                 android:id="@+id/textView4"
@@ -106,7 +119,7 @@
                 android:textAppearance="@style/LoginTitle"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/carouselViewHome" />
 
             <LinearLayout
                 android:id="@+id/linearLayout4"
