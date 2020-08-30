@@ -183,54 +183,7 @@
         android:layout_marginTop="445dp"
         android:background="@drawable/register"
         android:elevation="10dp"
-        android:text="Daftar"
+        android:text="Simpan"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
-
-    <View
-        android:id="@+id/vector_7"
-        android:layout_width="100dp"
-        android:layout_height="2dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="221dp"
-        android:layout_marginTop="561dp"
-        android:background="@drawable/vector_7" />
-
-    <TextView
-        android:id="@+id/atau"
-        android:layout_width="32dp"
-        android:layout_height="22dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="188dp"
-        android:layout_marginTop="551dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="atau"
-        android:textAppearance="@style/atau" />
-
-    <View
-        android:id="@+id/vector_8"
-        android:layout_width="100dp"
-        android:layout_height="2dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="87dp"
-        android:layout_marginTop="561dp"
-        android:background="@drawable/vector_7" />
-
-    <Button
-        android:id="@+id/google_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginHorizontal="23dp"
-        android:layout_marginTop="589dp"
-        android:layout_marginBottom="@dimen/garis"
-        android:background="@drawable/common_google_signin_btn_text_light"
-        android:text="Masuk Dengan Google"
-        android:textAllCaps="false"
-        android:textColor="@color/singup"
-        android:textSize="16sp" />
 </RelativeLayout>
