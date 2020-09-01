@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/register_mi"
-    tools:context=".Register_Mitra">
+    tools:context=".RegisterUser">
 
     <View
         android:id="@+id/ellipse_5"
@@ -46,29 +46,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="66dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/register"
-        android:textAppearance="@style/register" />
-
-    <TextView
-        android:id="@+id/Mitra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="117dp"
-        android:layout_marginTop="97dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/mitra"
         android:textAppearance="@style/register" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/rectangle_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginHorizontal="23dp"
         android:layout_marginTop="152dp"
@@ -87,7 +75,7 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+                android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.cardview.widget.CardView>
@@ -141,7 +129,7 @@
                 android:id="@+id/notelp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.cardview.widget.CardView>
@@ -150,7 +138,7 @@
         android:id="@+id/rectangle_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginHorizontal="23dp"
         android:layout_marginTop="371dp"
@@ -173,17 +161,121 @@
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rectangle_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rectangle_4"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rectangle_1"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textColor="#000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/role"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.cardview.widget.CardView>
+
     <Button
         android:id="@+id/btn_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginHorizontal="23dp"
         android:layout_marginTop="445dp"
         android:background="@drawable/register"
         android:elevation="10dp"
-        android:text="Simpan"
+        android:text="Daftar"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/daftar_jadi"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_register"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="23dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/daftar_jadi"
+        android:textAppearance="@style/daftar_jadi" />
+
+    <TextView
+        android:id="@+id/masuk"
+        android:layout_width="72dp"
+        android:layout_height="17dp"
+        android:layout_below="@+id/btn_register"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="false"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="23dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/daftar_mitr"
+        android:textAppearance="@style/daftar_mitr" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/daftar_jadi"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:background="@android:color/black"
+            android:padding="0.2dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="atau"
+            android:textAlignment="center"
+            android:textAppearance="@style/LoginTitle"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:background="@android:color/black"
+            android:padding="0.2dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/google_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="589dp"
+        android:layout_marginBottom="@dimen/garis"
+        android:background="@drawable/common_google_signin_btn_text_light"
+        android:text="Masuk Dengan Google"
+        android:textAllCaps="false"
+        android:textColor="@color/singup"
+        android:textSize="16sp" />
 </RelativeLayout>

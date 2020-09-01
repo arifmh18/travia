@@ -55,7 +55,7 @@
     <style name="daftar_mitr">
 
         <item name="android:textSize">
-            12sp
+            15sp
         </item>
 
         <item name="android:textColor">

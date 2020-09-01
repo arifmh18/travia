@@ -19,13 +19,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Register_User"
+            android:name=".RegisterUser"
             android:theme="@style/AppThemeNoBar"/>
         <activity android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".Register_Mitra"
+            android:name=".RegisterMitra"
             android:theme="@style/AppThemeNoBar" />
     </application>
 

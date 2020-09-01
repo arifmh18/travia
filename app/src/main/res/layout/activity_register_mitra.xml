@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/register_mi"
-    tools:context=".Register_User">
+    tools:context=".RegisterMitra">
 
     <View
         android:id="@+id/ellipse_5"
@@ -46,17 +46,29 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="21dp"
-        android:layout_marginTop="66dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="46dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/register"
+        android:textAppearance="@style/register" />
+
+    <TextView
+        android:id="@+id/Mitra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="117dp"
+        android:layout_marginTop="97dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/mitra"
         android:textAppearance="@style/register" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/rectangle_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginHorizontal="23dp"
         android:layout_marginTop="152dp"
@@ -66,16 +78,15 @@
         app:cardElevation="10dp">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/jk"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:textColor="#000">
+            android:layout_height="wrap_content">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email"
+            <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.cardview.widget.CardView>
@@ -138,7 +149,7 @@
         android:id="@+id/rectangle_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginHorizontal="23dp"
         android:layout_marginTop="371dp"
@@ -165,84 +176,13 @@
         android:id="@+id/btn_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginHorizontal="23dp"
         android:layout_marginTop="445dp"
         android:background="@drawable/register"
         android:elevation="10dp"
-        android:text="Masuk"
+        android:text="Simpan"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/daftar_jadi"
-        android:layout_width="176dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="74dp"
-        android:layout_marginTop="519dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/daftar_jadi"
-        android:textAppearance="@style/daftar_jadi" />
-
-    <TextView
-        android:id="@+id/daftar_mitr"
-        android:layout_width="72dp"
-        android:layout_height="17dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="241dp"
-        android:layout_marginTop="520dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/daftar_mitr"
-        android:textAppearance="@style/daftar_mitr" />
-
-    <View
-        android:id="@+id/vector_7"
-        android:layout_width="100dp"
-        android:layout_height="2dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="221dp"
-        android:layout_marginTop="561dp"
-        android:background="@drawable/vector_7" />
-
-    <TextView
-        android:id="@+id/atau"
-        android:layout_width="32dp"
-        android:layout_height="22dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="188dp"
-        android:layout_marginTop="551dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="atau"
-        android:textAppearance="@style/atau" />
-
-    <View
-        android:id="@+id/vector_8"
-        android:layout_width="100dp"
-        android:layout_height="2dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="87dp"
-        android:layout_marginTop="561dp"
-        android:background="@drawable/vector_7" />
-
-    <Button
-        android:id="@+id/google_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginHorizontal="23dp"
-        android:layout_marginTop="589dp"
-        android:layout_marginBottom="@dimen/garis"
-        android:background="@drawable/common_google_signin_btn_text_light"
-        android:text="Masuk Dengan Google"
-        android:textAllCaps="false"
-        android:textColor="@color/singup"
-        android:textSize="16sp" />
 </RelativeLayout>

@@ -39,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        loadingDialog = LoadingDialogUtil(this)
 
         //init Firebase Auth
         auth = FirebaseAuth.getInstance()
@@ -56,9 +57,6 @@ class LoginActivity : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-
-        loadingDialog = LoadingDialogUtil(this)
-
         //View binding with ktx in action
         binding.apply {
             btnLogin.setOnClickListener {
@@ -67,8 +65,8 @@ class LoginActivity : AppCompatActivity() {
             cvLoginWithGoogle.setOnClickListener {
                 loginWithGoogle()
             }
-            tvToRegister.setOnClickListener {
-                startActivity(Intent(this@LoginActivity, Register_User::class.java))
+            tvRegister.setOnClickListener {
+                startActivity(Intent(this@LoginActivity, RegisterUser::class.java))
             }
         }
     }
@@ -172,12 +170,12 @@ class LoginActivity : AppCompatActivity() {
                         user = true
                     }
                 }
-                loadingDialog.dismiss()
+//                loadingDialog.dismiss()
                 if (!user) {
                     startActivity(
                         Intent(
                             this@LoginActivity,
-                            Register_Mitra::class.java
+                            RegisterMitra::class.java
                         )
                     )
                 } else {

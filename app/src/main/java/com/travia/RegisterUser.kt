@@ -4,9 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.travia.databinding.ActivityRegisterUserBinding
-import kotlinx.android.synthetic.main.activity_login.*
 
-class Register_User : AppCompatActivity() {
+class RegisterUser : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterUserBinding
 
@@ -20,8 +19,8 @@ class Register_User : AppCompatActivity() {
 
     private fun init() {
         binding.apply {
-            daftarMitr.setOnClickListener {
-                startActivity(Intent(this@Register_User, Register_Mitra::class.java))
+            masuk.setOnClickListener {
+                startActivity(Intent(this@RegisterUser, LoginActivity::class.java))
             }
         }
     }
