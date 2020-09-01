@@ -23,6 +23,8 @@ android {
 
         resValue "string", "maps_api_key", (secureProps.getProperty("MAPS_API_KEY") ?: "")
 
+        multiDexEnabled true
+
     }
 
     buildTypes {

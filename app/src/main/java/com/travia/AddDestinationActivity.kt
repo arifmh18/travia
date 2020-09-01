@@ -1,5 +1,6 @@
 package com.travia
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -41,6 +42,10 @@ class AddDestinationActivity : AppCompatActivity() {
             val adapterCategory = ArrayAdapter(this@AddDestinationActivity, R.layout.item_category, destinationCategory)
 
             actDestinationCategory.setAdapter(adapterCategory)
+
+            btnAddLocation.setOnClickListener {
+                startActivity(Intent(this@AddDestinationActivity, MapActivity::class.java))
+            }
 
             btnAddDestination.setOnClickListener {
                 checkForm()
