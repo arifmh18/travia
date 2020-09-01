@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         if (auth.currentUser != null){
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, AddDestinationActivity::class.java))
             finish()
         }
 
@@ -106,7 +106,7 @@ class LoginActivity : AppCompatActivity() {
                     showToast(this, "Login berhasil")
                     loadingDialog.dismiss()
 
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(Intent(this, AddDestinationActivity::class.java))
                     finish()
 
                     /**
@@ -150,7 +150,7 @@ class LoginActivity : AppCompatActivity() {
                     Log.d(TAG, "firebaseAuthWithGoogle: login success")
                     showToast(this, "Login dengan Google berhasil")
                     loadingDialog.dismiss()
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(Intent(this, AddDestinationActivity::class.java))
                     finish()
                 } else{
                     Log.d(TAG, "firebaseAuthWithGoogle: login failed ${task.exception}")
