@@ -146,8 +146,6 @@
             android:layout_marginLeft="33dp"
             android:layout_marginTop="60dp"
             android:background="@drawable/rectage3"
-            android:cardCornerRadius="100dp"
-            android:cardElevation="100dp"
             android:drawableLeft="@drawable/ic_edit_profile"
             android:padding="16dp"
             android:text="Edit Profil" />
@@ -161,8 +159,6 @@
             android:layout_marginLeft="33dp"
             android:layout_marginTop="130dp"
             android:background="@drawable/rectage3"
-            android:cardCornerRadius="100dp"
-            android:cardElevation="100dp"
             android:drawableLeft="@drawable/ic_love"
             android:padding="16dp"
             android:text="Wishlist" />
@@ -176,8 +172,6 @@
             android:layout_marginLeft="33dp"
             android:layout_marginTop="200dp"
             android:background="@drawable/rectage3"
-            android:cardCornerRadius="100dp"
-            android:cardElevation="100dp"
             android:drawableLeft="@drawable/ic_history"
             android:padding="16dp"
             android:text="Wishlist" />
@@ -191,8 +185,6 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="300dp"
             android:background="@drawable/rectage"
-            android:cardCornerRadius="100dp"
-            android:cardElevation="100dp"
             android:padding="16dp"
             android:textColor="#FF0000"
             android:text="Logout" />
