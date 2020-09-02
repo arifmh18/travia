@@ -1,6 +1,6 @@
 package com.travia
 
-data class LokasiModel (
+data class LocationModel (
     val latitude: String,
     val longitude: String
 )

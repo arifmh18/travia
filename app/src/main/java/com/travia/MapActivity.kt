@@ -64,7 +64,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         map.addMarker(
             MarkerOptions()
                 .position(latLngIndo)
-                .title("Pilih lokasi tempat wisata")
+                .alpha(0f)
+                .title("Pilih location tempat wisata")
         )
 
         val cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLngIndo, 18f)

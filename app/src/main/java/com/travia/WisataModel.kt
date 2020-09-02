@@ -7,5 +7,6 @@ data class WisataModel(
     val kategory: String,
     val harga: String,
     val video_link: String,
-    val lokasi: LokasiModel
+    val location: LocationModel,
+    var jadwal: ScheduleModel? = null
 )

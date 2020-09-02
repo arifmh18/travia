@@ -3,7 +3,6 @@ package com.travia
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.android.gms.maps.model.LatLng
@@ -24,7 +23,7 @@ class AddDestinationActivity : AppCompatActivity() {
     private val destinationCategory = listOf("Wisata Kota", "Wisata Alam")
 
     private var isLocationTaken = false
-    private var lokasiModel: LokasiModel? = null
+    private var locationModel: LocationModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,8 +69,8 @@ class AddDestinationActivity : AppCompatActivity() {
                 !actDestinationCategory.text.isNotBlank() -> {
                     tilDestinationCategory.error = "Pilih kategori tempat wisata"
                 }
-                !isLocationTaken && lokasiModel == null -> {
-                    Toast.makeText(this@AddDestinationActivity, "Mohon untuk memilih lokasi tempat wisata !", Toast.LENGTH_SHORT).show()
+                !isLocationTaken && locationModel == null -> {
+                    Toast.makeText(this@AddDestinationActivity, "Mohon untuk memilih location tempat wisata !", Toast.LENGTH_SHORT).show()
                 }
                 !tieDestinationPrice.text.toString().isNotBlank() -> {
                     tilDestinationPrice.error = "Isikan harga masuk tempat wisata"
@@ -110,7 +109,7 @@ class AddDestinationActivity : AppCompatActivity() {
             kategory = mCategory,
             harga = price,
             video_link = video_link,
-            lokasi = lokasiModel!!
+            location = locationModel!!
         )
 
         database.reference.child("wisata").push()
@@ -132,11 +131,11 @@ class AddDestinationActivity : AppCompatActivity() {
             if (resultCode == RESULT_OK){
                 if (data != null){
                     val latLng = data.getParcelableExtra<LatLng>(RESULT_LATLNG)
-                    lokasiModel = LokasiModel(latitude = latLng?.latitude.toString(), longitude = latLng?.longitude.toString())
+                    locationModel = LocationModel(latitude = latLng?.latitude.toString(), longitude = latLng?.longitude.toString())
                     isLocationTaken = true
                 }
             }else {
-                Toast.makeText(this, "Mohon untuk memilih lokasi tempat wisata !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Mohon untuk memilih location tempat wisata !", Toast.LENGTH_SHORT).show()
             }
         }
     }
