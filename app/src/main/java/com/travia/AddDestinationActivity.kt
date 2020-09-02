@@ -3,8 +3,10 @@ package com.travia
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.travia.databinding.ActivityAddDestinationBinding
@@ -20,6 +22,9 @@ class AddDestinationActivity : AppCompatActivity() {
     private lateinit var loadingDialogUtil: LoadingDialogUtil
 
     private val destinationCategory = listOf("Wisata Kota", "Wisata Alam")
+
+    private var isLocationTaken = false
+    private var lokasiModel: LokasiModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +49,7 @@ class AddDestinationActivity : AppCompatActivity() {
             actDestinationCategory.setAdapter(adapterCategory)
 
             btnAddLocation.setOnClickListener {
-                startActivity(Intent(this@AddDestinationActivity, MapActivity::class.java))
+                startActivityForResult(Intent(this@AddDestinationActivity, MapActivity::class.java), REQ_LOCATION)
             }
 
             btnAddDestination.setOnClickListener {
@@ -64,6 +69,9 @@ class AddDestinationActivity : AppCompatActivity() {
                 }
                 !actDestinationCategory.text.isNotBlank() -> {
                     tilDestinationCategory.error = "Pilih kategori tempat wisata"
+                }
+                !isLocationTaken && lokasiModel == null -> {
+                    Toast.makeText(this@AddDestinationActivity, "Mohon untuk memilih lokasi tempat wisata !", Toast.LENGTH_SHORT).show()
                 }
                 !tieDestinationPrice.text.toString().isNotBlank() -> {
                     tilDestinationPrice.error = "Isikan harga masuk tempat wisata"
@@ -101,7 +109,8 @@ class AddDestinationActivity : AppCompatActivity() {
             deskripsi = description,
             kategory = mCategory,
             harga = price,
-            video_link = video_link
+            video_link = video_link,
+            lokasi = lokasiModel!!
         )
 
         database.reference.child("wisata").push()
@@ -115,5 +124,26 @@ class AddDestinationActivity : AppCompatActivity() {
                     loadingDialogUtil.dismiss()
                 }
             }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQ_LOCATION){
+            if (resultCode == RESULT_OK){
+                if (data != null){
+                    val latLng = data.getParcelableExtra<LatLng>(RESULT_LATLNG)
+                    lokasiModel = LokasiModel(latitude = latLng?.latitude.toString(), longitude = latLng?.longitude.toString())
+                    isLocationTaken = true
+                }
+            }else {
+                Toast.makeText(this, "Mohon untuk memilih lokasi tempat wisata !", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    companion object {
+        const val REQ_LOCATION = 10
+        const val RESULT_LATLNG = "RESULT_LATLNG"
+        var TAG = AddDestinationActivity::class.java.simpleName
     }
 }

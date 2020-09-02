@@ -6,5 +6,6 @@ data class WisataModel(
     val deskripsi: String,
     val kategory: String,
     val harga: String,
-    val video_link: String
+    val video_link: String,
+    val lokasi: LokasiModel
 )
