@@ -53,11 +53,10 @@
 
     </style>
     <style name="daftar_mitr">
-
+        <item name="fontFamily">@font/secular_one_regular</item>
         <item name="android:textSize">
             15sp
         </item>
-
         <item name="android:textColor">
             #FA4501
         </item>

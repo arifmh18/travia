@@ -1,10 +1,22 @@
 <resources>
-    <string name="app_name">Travia</string>
+    <string name="app_name">Travina</string>
     <string name="register">REGISTER</string>
     <string name="mitra">Mitra Usaha</string>
-    <string name="travia">Travia</string>
     <string name="daftar_jadi">Sudah Punya Akun? </string>
     <string name="daftar_mitr">Masuk</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="jk_string">
+        <item>Jenis Kelamin</item>
+        <item>Laki-Laki</item>
+        <item>Perempuan</item>
+    </string-array>
+
+    <string-array name="role">
+        <item>Pilih Jenis User</item>
+        <item>Wisatawan</item>
+        <item>Mitra Usaha</item>
+        <item>Pemandu Wisata</item>
+    </string-array>
 </resources>

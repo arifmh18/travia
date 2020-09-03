@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "832032186971-0b9q2d5khgrk9ps9pf21hgkefe5tpdq1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.travia",
+            "certificate_hash": "ee47487e306e7d045acf48970c8944a4ed832b8d"
+          }
+        },
+        {
+          "client_id": "832032186971-a15nbdh628qkcnlrg9o40ifsto45781m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.travia",
+            "certificate_hash": "c4777735703280682adf158d20a7e2f6ea3bdf3c"
+          }
+        },
+        {
           "client_id": "832032186971-fki1sa7kklak7qfaoe3j54b6l1nquuo5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
