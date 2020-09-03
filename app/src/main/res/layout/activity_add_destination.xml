@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddDestinationActivity">
+    tools:context=".ui.mitra.AddDestinationActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -124,8 +124,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
-                android:text="Tambah Wisata"
+                android:text="Atur Waktu Buka Wisata"
                 android:textAppearance="@style/LoginTitle"
+                android:drawableEnd="@drawable/ic_baseline_chevron_right_24"
                 android:layout_marginTop="16dp"
                 android:padding="16dp"
                 android:textSize="16sp"

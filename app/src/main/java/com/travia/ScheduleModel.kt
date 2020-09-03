@@ -1,11 +1,11 @@
 package com.travia
 
 data class ScheduleModel (
-    val senin: DayScheduleModel,
-    val selasa: DayScheduleModel,
-    val rabu: DayScheduleModel,
-    val kamis: DayScheduleModel,
-    val jumat: DayScheduleModel,
-    val sabtu: DayScheduleModel,
-    val minggu: DayScheduleModel,
+    var senin: DayScheduleModel? = null,
+    var selasa: DayScheduleModel? = null,
+    var rabu: DayScheduleModel? = null,
+    var kamis: DayScheduleModel? = null,
+    var jumat: DayScheduleModel? = null,
+    var sabtu: DayScheduleModel? = null,
+    var minggu: DayScheduleModel? = null,
 )

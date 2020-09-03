@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -12,6 +11,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.travia.databinding.ActivityLoginBinding
+import com.travia.ui.mitra.AddDestinationActivity
 import com.travia.utils.LoadingDialogUtil
 import com.travia.utils.TAG_GOOGLE_CLIENT_ID
 import com.travia.utils.showToast

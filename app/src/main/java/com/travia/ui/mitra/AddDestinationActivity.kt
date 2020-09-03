@@ -1,14 +1,20 @@
-package com.travia
+package com.travia.ui.mitra
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.gson.Gson
+import com.travia.LocationModel
+import com.travia.R
+import com.travia.WisataModel
 import com.travia.databinding.ActivityAddDestinationBinding
+import com.travia.ui.mitra.SetScheduleDestinationActivity.Companion.TAG_DESTINATION_DETAIL
 import com.travia.utils.LoadingDialogUtil
 
 class AddDestinationActivity : AppCompatActivity() {
@@ -43,7 +49,8 @@ class AddDestinationActivity : AppCompatActivity() {
 
         binding.apply {
 
-            val adapterCategory = ArrayAdapter(this@AddDestinationActivity, R.layout.item_category, destinationCategory)
+            val adapterCategory = ArrayAdapter(this@AddDestinationActivity,
+                R.layout.item_category, destinationCategory)
 
             actDestinationCategory.setAdapter(adapterCategory)
 
@@ -112,6 +119,13 @@ class AddDestinationActivity : AppCompatActivity() {
             location = locationModel!!
         )
 
+        val intent = Intent(this, SetScheduleDestinationActivity::class.java)
+        val wisataString = Gson().toJson(wisataModel)
+
+        intent.putExtra(TAG_DESTINATION_DETAIL, wisataString)
+        startActivity(intent)
+
+        /*
         database.reference.child("wisata").push()
             .setValue(wisataModel)
             .addOnCompleteListener { task ->
@@ -123,6 +137,8 @@ class AddDestinationActivity : AppCompatActivity() {
                     loadingDialogUtil.dismiss()
                 }
             }
+
+         */
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
