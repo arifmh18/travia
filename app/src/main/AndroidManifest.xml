@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.mitra.SetScheduleDestinationActivity"
+        <activity android:name=".ui.mitra.add_destination.SetScheduleDestinationActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <meta-data
@@ -20,7 +20,7 @@
             android:name=".ui.mitra.MapActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.mitra.AddDestinationActivity"
+            android:name=".ui.mitra.add_destination.AddDestinationActivity"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".Profil_User"/> -->
         <!-- <activity android:name=".Profil_Mitra" /> -->
         <activity android:name=".LoginActivity">

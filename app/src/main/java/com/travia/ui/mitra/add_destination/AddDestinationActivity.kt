@@ -1,9 +1,8 @@
-package com.travia.ui.mitra
+package com.travia.ui.mitra.add_destination
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.android.gms.maps.model.LatLng
@@ -14,7 +13,8 @@ import com.travia.LocationModel
 import com.travia.R
 import com.travia.WisataModel
 import com.travia.databinding.ActivityAddDestinationBinding
-import com.travia.ui.mitra.SetScheduleDestinationActivity.Companion.TAG_DESTINATION_DETAIL
+import com.travia.ui.mitra.MapActivity
+import com.travia.ui.mitra.add_destination.SetScheduleDestinationActivity.Companion.TAG_DESTINATION_DETAIL
 import com.travia.utils.LoadingDialogUtil
 
 class AddDestinationActivity : AppCompatActivity() {
