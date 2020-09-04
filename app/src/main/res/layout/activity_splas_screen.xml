@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".SplasScreen">
+    <TextView
+        android:id="@+id/travina_x_s"
+        android:layout_width="255dp"
+        android:layout_height="29dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="298dp"
+        android:text="@string/travina_x_s"
+        android:textAppearance="@style/travina_x_s"
+        android:gravity="center_horizontal|top"
+        />
+</LinearLayout>
