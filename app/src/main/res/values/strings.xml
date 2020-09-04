@@ -8,4 +8,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="travina_x_s">Travina X SmkCoding</string>
+    <string name="dimohon_unt">Dimohon untuk menjaga privasi dan di mohon \nuntuk segera konfirmasi\nbila terjadi hal yang mencurigakan</string>
+    <string name="pilih_metod">Pilih Metode Pembayaran</string>
 </resources>
