@@ -11,6 +11,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.travia.R
 import com.travia.databinding.ActivityMapBinding
+import com.travia.ui.mitra.add_destination.AddDestinationActivity
 
 class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 

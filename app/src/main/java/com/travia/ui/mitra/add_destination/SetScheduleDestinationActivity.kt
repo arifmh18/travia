@@ -1,23 +1,19 @@
-package com.travia.ui.mitra
+package com.travia.ui.mitra.add_destination
 
 import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.gson.Gson
 import com.travia.DayScheduleModel
-import com.travia.R
 import com.travia.ScheduleModel
 import com.travia.WisataModel
 import com.travia.databinding.ActivitySetScheduleDestinationBinding
 import com.travia.utils.LoadingDialogUtil
 import com.travia.utils.setLeadingZero
-import kotlinx.android.synthetic.main.item_set_schedule.*
 import java.util.*
 import kotlin.collections.ArrayList
 

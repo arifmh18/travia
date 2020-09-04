@@ -1,4 +1,4 @@
-package com.travia.ui.mitra
+package com.travia.ui.mitra.add_destination
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.travia.DayScheduleModel
 import com.travia.R
-import com.travia.ScheduleModel
 import kotlinx.android.synthetic.main.item_set_schedule.view.*
 
 class AdapterSetSchedule(private val context: Context, private val listener: Listener) : RecyclerView.Adapter<AdapterSetSchedule.ViewHolder> (){

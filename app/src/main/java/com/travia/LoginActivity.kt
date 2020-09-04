@@ -13,6 +13,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.travia.databinding.ActivityLoginBinding
 import com.travia.ui.mitra.AddDestinationActivity
 import com.travia.ui.mitra.add_equipment.AddEquipmentActivity
+import com.travia.ui.mitra.add_destination.AddDestinationActivity
 import com.travia.utils.LoadingDialogUtil
 import com.travia.utils.TAG_GOOGLE_CLIENT_ID
 import com.travia.utils.showToast

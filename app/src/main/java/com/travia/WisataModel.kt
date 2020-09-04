@@ -9,4 +9,6 @@ data class WisataModel(
     val video_link: String,
     val location: LocationModel,
     var jadwal: ScheduleModel? = null
-)
+){
+    constructor(): this("", "", "", "", "", "", LocationModel("", "", ""), null)
+}
