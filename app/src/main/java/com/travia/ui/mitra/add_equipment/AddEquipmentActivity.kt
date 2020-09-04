@@ -1,16 +1,21 @@
 package com.travia.ui.mitra.add_equipment
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.travia.EquipmentModel
 import com.travia.R
 import com.travia.databinding.ActivityAddEquipmentBinding
 import com.travia.utils.LoadingDialogUtil
+import kotlinx.android.synthetic.main.item_set_requirement.view.*
+import kotlinx.android.synthetic.main.layout_set_requirement.view.*
 
-class AddEquipmentActivity : AppCompatActivity() {
+class AddEquipmentActivity : AppCompatActivity(), AdapterRequirement.Listener {
 
     private lateinit var binding: ActivityAddEquipmentBinding
 
@@ -18,6 +23,8 @@ class AddEquipmentActivity : AppCompatActivity() {
     private lateinit var database: FirebaseDatabase
 
     private lateinit var loadingDialogUtil: LoadingDialogUtil
+
+    private lateinit var adapter: AdapterRequirement
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,9 +41,23 @@ class AddEquipmentActivity : AppCompatActivity() {
 
         loadingDialogUtil = LoadingDialogUtil(this)
 
+        adapter = AdapterRequirement(this, this)
+
         binding.apply {
-            btnAdDEquipment.setOnClickListener {
+            btnAddEquipment.setOnClickListener {
                 checkForm()
+            }
+
+            rvEquipmentRequirement.layoutManager = LinearLayoutManager(this@AddEquipmentActivity)
+            rvEquipmentRequirement.adapter = adapter
+
+            btnAddRequirementEquipment.setOnClickListener {
+                setRequirement(
+                    type = 1,
+                    mName = null,
+                    mRequired = null,
+                    position = null
+                )
             }
         }
 
@@ -77,7 +98,8 @@ class AddEquipmentActivity : AppCompatActivity() {
             nama = name,
             deskripsi = description,
             stok = stock,
-            harga = price
+            harga = price,
+            syarat = if (adapter.getRequirement().isEmpty()) null else adapter.getRequirement()
         )
 
         database.reference.child("peralatan").push()
@@ -91,5 +113,54 @@ class AddEquipmentActivity : AppCompatActivity() {
                     loadingDialogUtil.dismiss()
                 }
             }
+    }
+
+    private fun setRequirement(type: Int, mName: String?, mRequired: Boolean?, position: Int?){
+
+        val view = layoutInflater.inflate(R.layout.layout_set_requirement, binding.parentViewAddEquipment, false)
+
+        if (type == 2){
+            view.apply {
+                setRequirementName.setText(mName)
+                cbSetRequiredRequirement.isChecked = mRequired!!
+            }
+        }
+
+        val builder = AlertDialog.Builder(this)
+            .setView(view)
+            .setPositiveButton(if (type == 1) "Tambah" else "Edit") { dialogInterface, _ ->
+                view.apply {
+
+                    val name = setRequirementName.text.toString()
+                    val required = cbSetRequiredRequirement.isChecked
+
+                    if (type == 2){
+                        adapter.editRequirement(
+                            name = name, required = required, position = position!!
+                        )
+                    }else {
+                        adapter.addRequirement(
+                            name = name, required = required
+                        )
+                    }
+
+                    dialogInterface.dismiss()
+                }
+            }
+            .setNegativeButton("Batal") { dialogInterface, i ->
+                dialogInterface.dismiss()
+            }
+            .setCancelable(false)
+
+        builder.show()
+    }
+
+    override fun onEditRequirement(name: String, required: Boolean, position: Int) {
+        setRequirement(
+            type = 2,
+            mName = name,
+            mRequired = required,
+            position = position
+        )
     }
 }

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/parentViewAddEquipment"
     tools:context=".ui.mitra.add_equipment.AddEquipmentActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -93,8 +94,27 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Syarat Peminjaman"
+                android:textAppearance="@style/LoginTitle"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvEquipmentRequirement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
             <Button
-                android:id="@+id/btnAdDEquipment"
+                android:id="@+id/btnAddRequirementEquipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tambah Persyaratan"/>
+
+            <Button
+                android:id="@+id/btnAddEquipment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
