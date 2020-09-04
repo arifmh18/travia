@@ -27,7 +27,7 @@
         android:id="@+id/frameLayoutMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNavMain"/>
+        android:layout_above="@+id/bottomNavMain"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavMain"
