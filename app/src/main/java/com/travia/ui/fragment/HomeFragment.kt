@@ -1,4 +1,4 @@
-package com.travia
+package com.travia.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.synnapps.carouselview.ImageListener
+import com.travia.R
 import com.travia.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -14,8 +15,8 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
 
     private val sampleImage = arrayOf(
-        R.drawable.wisata_pujon_kidul, 
-        R.drawable.bromo_tengger_semeru_national_park, 
+        R.drawable.wisata_pujon_kidul,
+        R.drawable.bromo_tengger_semeru_national_park,
         R.drawable.lawang_sewu
     )
 
@@ -38,8 +39,8 @@ class HomeFragment : Fragment() {
 
     private fun init() {
         binding.apply {
-            carouselViewHome.pageCount = sampleImage.size
             carouselViewHome.setImageListener(imageListener)
+            carouselViewHome.pageCount = sampleImage.size
         }
     }
 
