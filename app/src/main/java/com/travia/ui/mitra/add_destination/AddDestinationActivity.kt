@@ -1,6 +1,7 @@
 package com.travia.ui.mitra.add_destination
 
 import android.content.Intent
+import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -147,7 +148,13 @@ class AddDestinationActivity : AppCompatActivity() {
             if (resultCode == RESULT_OK){
                 if (data != null){
                     val latLng = data.getParcelableExtra<LatLng>(RESULT_LATLNG)
-                    locationModel = LocationModel(latitude = latLng?.latitude.toString(), longitude = latLng?.longitude.toString())
+
+                    val geocoder = Geocoder(this)
+                    val listLocation = geocoder.getFromLocation(latLng!!.latitude, latLng.longitude, 1)
+
+                    val locationName = listLocation[0].locality
+
+                    locationModel = LocationModel(name = locationName, latitude = latLng.latitude.toString(), longitude = latLng.longitude.toString())
                     isLocationTaken = true
                 }
             }else {
