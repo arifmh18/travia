@@ -10,10 +10,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.travia.LoginActivity
 import com.travia.R
 import kotlinx.android.synthetic.main.fragment_profil.*
+import com.travia.databinding.FragmentProfilBinding
+import kotlinx.android.synthetic.main.fragment_profil.*
 
 class ProfilFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var binding: FragmentProfilBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,19 +27,27 @@ class ProfilFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profil, container, false)
+        binding = FragmentProfilBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         auth = FirebaseAuth.getInstance()
+        init()
+    }
 
-        btnLogout.setOnClickListener {
-            auth.signOut()
-            startActivity(Intent(context, LoginActivity::class.java))
-            activity!!.finish()
+    private fun init() {
+        binding.apply {
+            btn_logout.setOnClickListener {
+                auth.signOut()
+                startActivity(Intent(context, LoginActivity::class.java))
+                activity!!.finish()
+            }
         }
     }
 
+    companion object {
+    }
 }
