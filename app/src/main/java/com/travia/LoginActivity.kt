@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.travia.databinding.ActivityLoginBinding
 import com.travia.ui.mitra.AddDestinationActivity
+import com.travia.ui.mitra.add_equipment.AddEquipmentActivity
 import com.travia.utils.LoadingDialogUtil
 import com.travia.utils.TAG_GOOGLE_CLIENT_ID
 import com.travia.utils.showToast
@@ -40,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         if (auth.currentUser != null){
-            startActivity(Intent(this, AddDestinationActivity::class.java))
+            startActivity(Intent(this, AddEquipmentActivity::class.java))
             finish()
         }
 
@@ -106,7 +107,7 @@ class LoginActivity : AppCompatActivity() {
                     showToast(this, "Login berhasil")
                     loadingDialog.dismiss()
 
-                    startActivity(Intent(this, AddDestinationActivity::class.java))
+                    startActivity(Intent(this, AddEquipmentActivity::class.java))
                     finish()
 
                     /**
@@ -150,7 +151,7 @@ class LoginActivity : AppCompatActivity() {
                     Log.d(TAG, "firebaseAuthWithGoogle: login success")
                     showToast(this, "Login dengan Google berhasil")
                     loadingDialog.dismiss()
-                    startActivity(Intent(this, AddDestinationActivity::class.java))
+                    startActivity(Intent(this, AddEquipmentActivity::class.java))
                     finish()
                 } else{
                     Log.d(TAG, "firebaseAuthWithGoogle: login failed ${task.exception}")
