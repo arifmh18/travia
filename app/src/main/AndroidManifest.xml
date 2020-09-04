@@ -30,6 +30,8 @@
             android:name=".ui.mitra.add_destination.AddDestinationActivity"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".Profil_User"/> -->
         <!-- <activity android:name=".Profil_Mitra" /> -->
+        <activity android:name=".Profil_User"/>
+        <activity android:name=".Profil_Mitra" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,13 +40,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Register_User"
-            android:theme="@style/AppThemeNoBar" />
+            android:name=".RegisterUser"
+            android:theme="@style/AppThemeNoBar"/>
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Register_Mitra"
+            android:name=".RegisterMitra"
             android:theme="@style/AppThemeNoBar" />
     </application>
 

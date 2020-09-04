@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Travia"
+            android:text="@string/app_name"
             android:textSize="40sp"
             android:textColor="@color/colorPrimary"
             style="@style/LoginTitle"
@@ -168,12 +168,26 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:text="Tidak punya akun? Daftar "
+            android:text="Tidak punya akun?"
             android:textAppearance="@style/LoginTitle"
-            android:textSize="16sp"
             android:textColor="@color/colorGrey"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.44"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="8dp"
+            android:text="Daftar"
+            android:textAppearance="@style/LoginTitle"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/tvToRegister"
             app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
         <LinearLayout
