@@ -56,6 +56,10 @@
 
                 </androidx.cardview.widget.CardView>
 
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"/>
+
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -90,24 +94,24 @@
                 android:id="@+id/carouselViewHome"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                app:slideInterval="1500"
-                app:indicatorGravity="bottom|center_horizontal"
                 app:fillColor="@color/colorPrimary"
-                app:pageColor="@android:color/white"
-                app:snap="true"
+                app:indicatorGravity="bottom|center_horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:pageColor="@android:color/white"
+                app:slideInterval="1500"
+                app:snap="true" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView3"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="200dp"-->
-<!--                android:scaleType="centerCrop"-->
-<!--                android:src="@drawable/wisata_pujon_kidul"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
+            <!--            <ImageView-->
+            <!--                android:id="@+id/imageView3"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="200dp"-->
+            <!--                android:scaleType="centerCrop"-->
+            <!--                android:src="@drawable/wisata_pujon_kidul"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent" />-->
 
             <TextView
                 android:id="@+id/textView4"
@@ -130,7 +134,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:padding="4dp"
-                app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+                app:layout_constraintEnd_toStartOf="@+id/linearLayout5"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4">
@@ -146,7 +150,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="4dp"
-                    android:text="Wisata"
+                    android:text="Wisata Alam"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/LoginTitle"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout4"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout4">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_round_blue_home"
+                    android:padding="16dp"
+                    android:src="@drawable/ic_destination" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:text="Wisata Kota"
                     android:textAlignment="center"
                     android:textAppearance="@style/LoginTitle"
                     android:textSize="12sp" />
@@ -162,8 +196,8 @@
                 android:padding="4dp"
                 app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/linearLayout4"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout4">
+                app:layout_constraintStart_toEndOf="@+id/linearLayout5"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout5">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -187,10 +221,11 @@
                 android:id="@+id/linearLayout2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:padding="4dp"
-                app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/linearLayout3"
                 app:layout_constraintTop_toTopOf="@+id/linearLayout3">
@@ -217,14 +252,15 @@
                 android:id="@+id/linearLayout6"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:padding="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/linearLayout8"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout2">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -248,15 +284,13 @@
                 android:id="@+id/linearLayout8"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:padding="4dp"
                 app:layout_constraintEnd_toStartOf="@+id/linearLayout7"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+                app:layout_constraintStart_toEndOf="@+id/linearLayout6"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout6">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -359,39 +393,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView5" />
 
-            <include
-                android:id="@+id/include"
-                layout="@layout/item_destination"
-                android:layout_width="0dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPopularDestination"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toStartOf="@+id/include3"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/include2"
-                app:layout_constraintTop_toTopOf="@+id/include2" />
-
-            <include
-                android:id="@+id/include2"
-                layout="@layout/item_destination"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toStartOf="@+id/include"
-                app:layout_constraintHorizontal_bias="0.5"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-            <include
-                android:id="@+id/include3"
-                layout="@layout/item_destination"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/include"
-                app:layout_constraintTop_toTopOf="@+id/include" />
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                tools:listitem="@layout/item_destination" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
