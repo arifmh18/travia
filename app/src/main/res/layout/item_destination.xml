@@ -14,12 +14,14 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/ivDestinationItem"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:src="@drawable/wisata_pujon_kidul"
             android:scaleType="centerCrop"/>
 
         <TextView
+            android:id="@+id/tvNameDestinationItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nama Wisata"
@@ -29,6 +31,7 @@
             android:layout_marginTop="12dp"/>
 
         <TextView
+            android:id="@+id/tvPriceDestinationItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Rp 50xxxxx"
@@ -39,6 +42,7 @@
             android:layout_marginTop="4dp"/>
 
         <ImageView
+            android:id="@+id/ivMoreDestinationItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_more_horiz_24"
