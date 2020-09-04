@@ -15,7 +15,7 @@ class SplasScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splas_screen)
         handler = Handler()
         Handler().postDelayed({
-            val intent = Intent(this@SplasScreen, MainActivity::class.java)
+            val intent = Intent(this@SplasScreen, LoginActivity::class.java)
             startActivity(intent)
             finish()
         },5000)

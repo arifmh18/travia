@@ -12,10 +12,6 @@
         <item name="windowActionBar">false</item>
     </style>
 
-    <style name="LoginTitle">
-        <item name="android:fontFamily">@font/secular_one_regular</item>
-    </style>
-
     <style name="AppThemeNoBar" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>

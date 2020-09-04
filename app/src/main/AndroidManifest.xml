@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.wisatawan.DestinationListActivity"/>
+        <activity android:name=".ui.wisatawan.DestinationListActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ui.mitra.add_destination.SetScheduleDestinationActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
@@ -27,7 +28,9 @@
             android:name=".ui.mitra.add_destination.AddDestinationActivity"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".Profil_User"/> -->
         <!-- <activity android:name=".Profil_Mitra" /> -->
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".SplasScreen"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
