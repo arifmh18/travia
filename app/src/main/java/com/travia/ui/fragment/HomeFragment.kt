@@ -62,11 +62,13 @@ class HomeFragment : Fragment(), View.OnClickListener {
             R.id.containerCityCategory -> {
                 val intent = Intent(requireContext(), DestinationListActivity::class.java)
                 intent.putExtra(DestinationListActivity.DESTINATION_TYPE, DestinationListActivity.CITY_TYPE)
+                intent.putExtra(DestinationListActivity.TOOLBAR_TITLE, "Wisata Kota")
                 startActivity(intent)
             }
             R.id.containerNatureCategory -> {
                 val intent = Intent(requireContext(), DestinationListActivity::class.java)
                 intent.putExtra(DestinationListActivity.DESTINATION_TYPE, DestinationListActivity.NATURE_TYPE)
+                intent.putExtra(DestinationListActivity.TOOLBAR_TITLE, "Wisata Alam")
                 startActivity(intent)
             }
         }
