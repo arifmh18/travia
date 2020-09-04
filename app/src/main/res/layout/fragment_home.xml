@@ -126,7 +126,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/carouselViewHome" />
 
             <LinearLayout
-                android:id="@+id/linearLayout4"
+                android:id="@+id/containerNatureCategory"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -134,7 +134,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:padding="4dp"
-                app:layout_constraintEnd_toStartOf="@+id/linearLayout5"
+                app:layout_constraintEnd_toStartOf="@+id/containerCityCategory"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4">
@@ -158,7 +158,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayout5"
+                android:id="@+id/containerCityCategory"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -166,15 +166,15 @@
                 android:padding="4dp"
                 app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/linearLayout4"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout4">
+                app:layout_constraintStart_toEndOf="@+id/containerNatureCategory"
+                app:layout_constraintTop_toTopOf="@+id/containerNatureCategory">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_round_blue_home"
                     android:padding="16dp"
-                    android:src="@drawable/ic_destination" />
+                    android:src="@drawable/ic_city_destination" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -196,8 +196,8 @@
                 android:padding="4dp"
                 app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/linearLayout5"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout5">
+                app:layout_constraintStart_toEndOf="@+id/containerCityCategory"
+                app:layout_constraintTop_toTopOf="@+id/containerCityCategory">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -260,7 +260,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/linearLayout8"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+                app:layout_constraintTop_toBottomOf="@+id/containerNatureCategory">
 
                 <ImageView
                     android:layout_width="wrap_content"

@@ -1,5 +1,6 @@
 package com.travia.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,8 +10,9 @@ import android.widget.ImageView
 import com.synnapps.carouselview.ImageListener
 import com.travia.R
 import com.travia.databinding.FragmentHomeBinding
+import com.travia.ui.wisatawan.DestinationListActivity
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentHomeBinding
 
@@ -41,6 +43,10 @@ class HomeFragment : Fragment() {
         binding.apply {
             carouselViewHome.pageCount = sampleImage.size
             carouselViewHome.setImageListener(imageListener)
+
+            containerCityCategory.setOnClickListener(this@HomeFragment)
+            containerNatureCategory.setOnClickListener(this@HomeFragment)
+
         }
     }
 
@@ -49,5 +55,20 @@ class HomeFragment : Fragment() {
     }
 
     companion object {
+    }
+
+    override fun onClick(view: View?) {
+        when(view?.id){
+            R.id.containerCityCategory -> {
+                val intent = Intent(requireContext(), DestinationListActivity::class.java)
+                intent.putExtra(DestinationListActivity.DESTINATION_TYPE, DestinationListActivity.CITY_TYPE)
+                startActivity(intent)
+            }
+            R.id.containerNatureCategory -> {
+                val intent = Intent(requireContext(), DestinationListActivity::class.java)
+                intent.putExtra(DestinationListActivity.DESTINATION_TYPE, DestinationListActivity.NATURE_TYPE)
+                startActivity(intent)
+            }
+        }
     }
 }
