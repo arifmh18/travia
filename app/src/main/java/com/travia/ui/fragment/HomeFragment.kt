@@ -41,8 +41,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     private fun init() {
         binding.apply {
-            carouselViewHome.pageCount = sampleImage.size
             carouselViewHome.setImageListener(imageListener)
+            carouselViewHome.pageCount = sampleImage.size
 
             containerCityCategory.setOnClickListener(this@HomeFragment)
             containerNatureCategory.setOnClickListener(this@HomeFragment)
