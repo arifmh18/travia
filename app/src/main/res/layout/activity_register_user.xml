@@ -179,19 +179,10 @@
                 app:cardCornerRadius="5dp"
                 app:cardElevation="10dp">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Jenis Kelamin"
-                    android:textColor="#000">
-
-                    <androidx.appcompat.widget.AppCompatSpinner
+                    <Spinner
                         android:id="@+id/edtJk"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp" />
-
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_height="wrap_content"/>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -205,19 +196,11 @@
                 app:cardCornerRadius="5dp"
                 app:cardElevation="10dp">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Role"
-                    android:textColor="#000">
-
-                    <androidx.appcompat.widget.AppCompatSpinner
+                    <Spinner
                         android:id="@+id/edtRole"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp" />
+                        android:layout_height="wrap_content"/>
 
-                </com.google.android.material.textfield.TextInputLayout>
             </androidx.cardview.widget.CardView>
 
             <Button

@@ -59,13 +59,13 @@ class RegisterUser : AppCompatActivity() {
         val adapter = ArrayAdapter.createFromResource(
             this,
             R.array.jk_string,
-            android.R.layout.simple_spinner_item
+            R.layout.list_item
         )
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         val role = ArrayAdapter.createFromResource(
             this,
             R.array.role,
-            android.R.layout.simple_spinner_item
+            R.layout.list_item
         )
         role.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
