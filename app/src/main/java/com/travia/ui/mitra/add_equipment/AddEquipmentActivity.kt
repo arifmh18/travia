@@ -108,6 +108,7 @@ class AddEquipmentActivity : AppCompatActivity(), AdapterRequirement.Listener {
                 if (task.isSuccessful){
                     Toast.makeText(this, "Berhasil tambah peralatan", Toast.LENGTH_SHORT).show()
                     loadingDialogUtil.dismiss()
+                    finish()
                 }else {
                     Toast.makeText(this, "Gagal ${task.exception}", Toast.LENGTH_SHORT).show()
                     loadingDialogUtil.dismiss()

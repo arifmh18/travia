@@ -4,6 +4,7 @@ import android.content.Intent
 import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.android.gms.maps.model.LatLng
@@ -123,8 +124,10 @@ class AddDestinationActivity : AppCompatActivity() {
         val intent = Intent(this, SetScheduleDestinationActivity::class.java)
         val wisataString = Gson().toJson(wisataModel)
 
+        loadingDialogUtil.dismiss()
+
         intent.putExtra(TAG_DESTINATION_DETAIL, wisataString)
-        startActivity(intent)
+        startActivityForResult(intent, 0)
 
         /*
         database.reference.child("wisata").push()
@@ -154,17 +157,26 @@ class AddDestinationActivity : AppCompatActivity() {
 
                     val locationName = listLocation[0].locality
 
+                    binding.tvDestinationLocation.text = listLocation[0].locality
+
                     locationModel = LocationModel(name = locationName, latitude = latLng.latitude.toString(), longitude = latLng.longitude.toString())
                     isLocationTaken = true
                 }
             }else {
                 Toast.makeText(this, "Mohon untuk memilih location tempat wisata !", Toast.LENGTH_SHORT).show()
             }
+        }else if (requestCode == ADD_DESTINATION){
+            if (resultCode == RESULT_OK){
+                finish()
+            }else if(resultCode == RESULT_CANCELED){
+                Log.d(TAG, "onActivityResult: dibatalkan oleh user")
+            }
         }
     }
 
     companion object {
         const val REQ_LOCATION = 10
+        const val ADD_DESTINATION = 0
         const val RESULT_LATLNG = "RESULT_LATLNG"
         var TAG = AddDestinationActivity::class.java.simpleName
     }

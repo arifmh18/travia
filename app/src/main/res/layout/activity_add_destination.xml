@@ -87,6 +87,28 @@
                 android:textColor="@android:color/white"
                 android:background="@color/colorPrimary"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lokasi : "
+                    android:textAppearance="@style/LoginTitle"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tvDestinationLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/LoginTitle"
+                    android:textSize="16sp"
+                    android:text="Belum dipilih"/>
+
+            </LinearLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilDestinationPrice"
                 android:layout_width="match_parent"

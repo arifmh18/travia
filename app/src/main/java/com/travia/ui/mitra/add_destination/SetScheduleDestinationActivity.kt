@@ -61,6 +61,11 @@ class SetScheduleDestinationActivity : AppCompatActivity(), AdapterSetSchedule.L
             btnAddDestination.setOnClickListener {
                 setScheduleToDestination()
             }
+
+            tbSetSchedule.setNavigationOnClickListener {
+                setResult(RESULT_CANCELED)
+                finish()
+            }
         }
 
         setScheduleList()
@@ -125,6 +130,8 @@ class SetScheduleDestinationActivity : AppCompatActivity(), AdapterSetSchedule.L
                 if (task.isSuccessful){
                     Toast.makeText(this, "Berhasil tambah wisata", Toast.LENGTH_SHORT).show()
                     loadingDialogUtil.dismiss()
+                    setResult(RESULT_OK)
+                    finish()
                 }else {
                     Toast.makeText(this, "${task.exception}", Toast.LENGTH_SHORT).show()
                     loadingDialogUtil.dismiss()
@@ -170,6 +177,12 @@ class SetScheduleDestinationActivity : AppCompatActivity(), AdapterSetSchedule.L
 
     override fun onChooseCloseTime(position: Int) {
         showTimePickerDialog(position = position, type = 2)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        setResult(RESULT_CANCELED)
+        finish()
     }
 
     companion object {
