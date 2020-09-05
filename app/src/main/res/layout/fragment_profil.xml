@@ -137,7 +137,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
                     android:fontFamily="@font/secular_one_regular"
-                    android:text="Edit Wisata "
+                    android:text="Tambah Wisata"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -163,37 +163,37 @@
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
                     android:fontFamily="@font/secular_one_regular"
-                    android:text="Pesanan"
+                    android:text="Tambah Peralatan"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/btn_history"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="32dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/btn_rectangle"
-                android:gravity="center"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/btn_history"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="32dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:background="@drawable/btn_rectangle"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="horizontal">-->
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/ic_clock" />
+<!--                <ImageView-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:src="@drawable/ic_clock" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="24dp"
-                    android:fontFamily="@font/secular_one_regular"
-                    android:text="History"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:fontFamily="@font/secular_one_regular"-->
+<!--                    android:text="History"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="18sp" />-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/btn_logout"

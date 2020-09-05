@@ -11,6 +11,8 @@ import com.travia.LoginActivity
 import com.travia.R
 import kotlinx.android.synthetic.main.fragment_profil.*
 import com.travia.databinding.FragmentProfilBinding
+import com.travia.ui.mitra.add_destination.AddDestinationActivity
+import com.travia.ui.mitra.add_equipment.AddEquipmentActivity
 import kotlinx.android.synthetic.main.fragment_profil.*
 
 class ProfilFragment : Fragment() {
@@ -40,10 +42,16 @@ class ProfilFragment : Fragment() {
 
     private fun init() {
         binding.apply {
-            btn_logout.setOnClickListener {
+            btnLogout.setOnClickListener {
                 auth.signOut()
                 startActivity(Intent(context, LoginActivity::class.java))
                 activity!!.finish()
+            }
+            btnEditWisata.setOnClickListener {
+                startActivity(Intent(requireContext(), AddDestinationActivity::class.java))
+            }
+            btnPesanan.setOnClickListener {
+                startActivity(Intent(requireContext(), AddEquipmentActivity::class.java))
             }
         }
     }
