@@ -36,10 +36,10 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/photoProfile"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:src="#03A9F4"
                 app:civ_border_color="@color/colorPrimary"
                 app:civ_border_width="1dp" />
@@ -59,7 +59,7 @@
                 android:id="@+id/profileEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/secular_one_regular"
                 android:gravity="center"
                 android:text="@string/app_name"
