@@ -23,7 +23,9 @@ class LoadingDialogUtil(private var context: Context) {
     }
 
     fun dismiss(){
-        alertDialog.dismiss()
+        if (alertDialog.isShowing){
+            alertDialog.dismiss()
+        }
     }
 
 }

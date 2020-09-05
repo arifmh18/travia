@@ -1,10 +1,26 @@
 <resources>
-    <string name="app_name">Travia</string>
+    <string name="app_name">Travina</string>
+    <string name="name_instansi">PT. KITA @2020</string>
     <string name="register">REGISTER</string>
     <string name="mitra">Mitra Usaha</string>
-    <string name="travia">Travia</string>
-    <string name="daftar_jadi">Daftar jadi Mitra Travia?</string>
-    <string name="daftar_mitr">Daftar Mitra</string>
+    <string name="daftar_jadi">Sudah Punya Akun? </string>
+    <string name="daftar_mitr">Masuk</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="jk_string">
+        <item>Jenis Kelamin</item>
+        <item>Laki-Laki</item>
+        <item>Perempuan</item>
+    </string-array>
+
+    <string-array name="role">
+        <item>Pilih Jenis User</item>
+        <item>Wisatawan</item>
+        <item>Mitra Usaha</item>
+        <item>Pemandu Wisata</item>
+    </string-array>
+    <string name="travina_x_s">Travina X SmkCoding</string>
+    <string name="dimohon_unt">Dimohon untuk menjaga privasi dan di mohon \nuntuk segera konfirmasi\nbila terjadi hal yang mencurigakan</string>
+    <string name="pilih_metod">Pilih Metode Pembayaran</string>
 </resources>

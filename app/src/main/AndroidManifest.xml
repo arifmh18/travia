@@ -9,17 +9,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Register_User"></activity>
-        <activity android:name=".Register_Mitra" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".ui.wisatawan.DestinationListActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.mitra.add_destination.SetScheduleDestinationActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ui.mitra.add_equipment.AddEquipmentActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/maps_api_key" />
+
+        <activity
+            android:name=".ui.mitra.MapActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.mitra.add_destination.AddDestinationActivity"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".Profil_User"/> -->
+        <!-- <activity android:name=".Profil_Mitra" /> -->
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".SplasScreen"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".RegisterUser"
+            android:theme="@style/AppThemeNoBar"/>
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".RegisterMitra"
+            android:theme="@style/AppThemeNoBar" />
     </application>
 
 </manifest>
