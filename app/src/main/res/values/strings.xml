@@ -13,6 +13,13 @@
         <item>Perempuan</item>
     </string-array>
 
+    <string-array name="kategori_peralatan_string">
+        <item>Jenis Peralatan</item>
+        <item>Alat</item>
+        <item>Kendaraan</item>
+    </string-array>
+
+
     <string-array name="role">
         <item>Pilih Jenis User</item>
         <item>Wisatawan</item>

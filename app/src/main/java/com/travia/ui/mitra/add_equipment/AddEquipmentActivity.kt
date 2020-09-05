@@ -3,6 +3,7 @@ package com.travia.ui.mitra.add_equipment
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +13,7 @@ import com.travia.EquipmentModel
 import com.travia.R
 import com.travia.databinding.ActivityAddEquipmentBinding
 import com.travia.utils.LoadingDialogUtil
+import com.travia.utils.showToast
 import kotlinx.android.synthetic.main.item_set_requirement.view.*
 import kotlinx.android.synthetic.main.layout_set_requirement.view.*
 
@@ -51,6 +53,10 @@ class AddEquipmentActivity : AppCompatActivity(), AdapterRequirement.Listener {
             rvEquipmentRequirement.layoutManager = LinearLayoutManager(this@AddEquipmentActivity)
             rvEquipmentRequirement.adapter = adapter
 
+            val adapter =  ArrayAdapter.createFromResource(baseContext, R.array.kategori_peralatan_string, R.layout.list_item)
+
+            spinnerCategoryEquipment.adapter = adapter
+
             btnAddRequirementEquipment.setOnClickListener {
                 setRequirement(
                     type = 1,
@@ -78,19 +84,23 @@ class AddEquipmentActivity : AppCompatActivity(), AdapterRequirement.Listener {
                 !tieEquipmentPrice.text.toString().isNotBlank() -> {
                     tilEquipmentPrice.error = "Isi harga sewa peralatan"
                 }
+                spinnerCategoryEquipment.selectedItemPosition == 0 -> {
+                    showToast(this@AddEquipmentActivity, "Pilih Jenis Peralatan Anda")
+                }
                 else -> {
                     submitEquipment(
                         name = tieEquipmentName.text.toString(),
                         description = tieEquipmentDescription.text.toString(),
                         stock = tieEquipmentStock.text.toString(),
-                        price = tieEquipmentPrice.text.toString()
+                        price = tieEquipmentPrice.text.toString(),
+                        kategori = spinnerCategoryEquipment.selectedItem.toString()
                     )
                 }
             }
         }
     }
 
-    private fun submitEquipment(name: String, description: String, stock: String, price: String) {
+    private fun submitEquipment(name: String, description: String, stock: String, price: String, kategori: String) {
         loadingDialogUtil.show()
 
         val equipmentModel = EquipmentModel(
@@ -99,6 +109,7 @@ class AddEquipmentActivity : AppCompatActivity(), AdapterRequirement.Listener {
             deskripsi = description,
             stok = stock,
             harga = price,
+            kategori = kategori,
             syarat = if (adapter.getRequirement().isEmpty()) null else adapter.getRequirement()
         )
 
