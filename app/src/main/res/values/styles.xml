@@ -132,4 +132,27 @@
         </item>
 
     </style>
+    <style name="dimohon_unt">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #ff0006
+        </item>
+
+    </style>
+    <style name="pilih_metod">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #F9F6F6
+        </item>
+
+    </style>
+
 </resources>
