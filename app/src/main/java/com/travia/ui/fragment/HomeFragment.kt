@@ -10,6 +10,7 @@ import android.widget.ImageView
 import com.synnapps.carouselview.ImageListener
 import com.travia.R
 import com.travia.databinding.FragmentHomeBinding
+import com.travia.ui.CariActivity
 import com.travia.ui.wisatawan.DestinationListActivity
 
 class HomeFragment : Fragment(), View.OnClickListener {
@@ -46,7 +47,15 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
             containerCityCategory.setOnClickListener(this@HomeFragment)
             containerNatureCategory.setOnClickListener(this@HomeFragment)
-
+            cari.setOnClickListener {
+                startActivity(Intent(context, CariActivity::class.java))
+            }
+            logoCari.setOnClickListener {
+                startActivity(Intent(context, CariActivity::class.java))
+            }
+            edtCari.setOnClickListener {
+                startActivity(Intent(context, CariActivity::class.java))
+            }
         }
     }
 

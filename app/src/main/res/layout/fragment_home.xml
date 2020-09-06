@@ -31,6 +31,7 @@
                     app:cardElevation="0dp">
 
                     <LinearLayout
+                        android:id="@+id/cari"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
@@ -38,6 +39,7 @@
                         android:weightSum="10">
 
                         <EditText
+                            android:id="@+id/edtCari"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="9"
@@ -47,6 +49,7 @@
                             android:background="@null"/>
 
                         <ImageView
+                            android:id="@+id/logoCari"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
