@@ -60,21 +60,33 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilDestinationCategory"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                app:errorEnabled="true">
+                android:text="Kategori Wisata"
+                android:textAppearance="@style/LoginTitle"
+                android:textSize="16sp"/>
 
-                <AutoCompleteTextView
-                    android:id="@+id/actDestinationCategory"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Kategori Wisata"
-                    android:inputType="none"/>
+            <Spinner
+                android:id="@+id/spinnerCategoryDestination"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/tilDestinationCategory"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                app:errorEnabled="true">-->
+
+<!--                <AutoCompleteTextView-->
+<!--                    android:id="@+id/actDestinationCategory"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Kategori Wisata"-->
+<!--                    android:inputType="none"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
             <Button
                 android:id="@+id/btnAddLocation"

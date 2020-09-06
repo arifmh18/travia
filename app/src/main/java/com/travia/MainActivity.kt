@@ -11,7 +11,6 @@ import com.travia.adapter.ViewPagerAdapter
 import com.travia.databinding.ActivityMainBinding
 import com.travia.ui.fragment.HomeFragment
 import com.travia.ui.fragment.KeranjangFragment
-import com.travia.ui.fragment.PesanFragment
 import com.travia.ui.fragment.ProfilFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
