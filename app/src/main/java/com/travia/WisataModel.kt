@@ -8,7 +8,8 @@ data class WisataModel(
     val harga: String,
     val video_link: String,
     val location: LocationModel,
-    var jadwal: ScheduleModel? = null
+    var jadwal: ScheduleModel? = null,
+    val rekomendasi: Boolean = false
 ){
-    constructor(): this("", "", "", "", "", "", LocationModel("", "", ""), null)
+    constructor(): this("", "", "", "", "", "", LocationModel("", "", ""), null, false)
 }

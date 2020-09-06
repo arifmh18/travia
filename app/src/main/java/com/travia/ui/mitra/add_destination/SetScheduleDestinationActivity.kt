@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.gson.Gson
 import com.travia.DayScheduleModel
@@ -23,6 +24,7 @@ class SetScheduleDestinationActivity : AppCompatActivity(), AdapterSetSchedule.L
     private lateinit var adapter: AdapterSetSchedule
 
     private lateinit var database : FirebaseDatabase
+    private lateinit var auth: FirebaseAuth
 
     private lateinit var loadingDialogUtil: LoadingDialogUtil
 
@@ -49,6 +51,7 @@ class SetScheduleDestinationActivity : AppCompatActivity(), AdapterSetSchedule.L
         }
 
         database = FirebaseDatabase.getInstance()
+        auth = FirebaseAuth.getInstance()
 
         adapter = AdapterSetSchedule(this, this)
 
@@ -124,7 +127,7 @@ class SetScheduleDestinationActivity : AppCompatActivity(), AdapterSetSchedule.L
     }
 
     private fun submitDestination() {
-        database.reference.child("wisata").push()
+        database.reference.child("wisata").child(auth.currentUser!!.uid)
             .setValue(wisataModel)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful){

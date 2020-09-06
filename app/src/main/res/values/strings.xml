@@ -19,6 +19,11 @@
         <item>Kendaraan</item>
     </string-array>
 
+    <string-array name="kategori_wisata_string">
+        <item>Jenis Peralatan</item>
+        <item>Wisata Kota</item>
+        <item>Wisata Alam</item>
+    </string-array>
 
     <string-array name="role">
         <item>Pilih Jenis User</item>

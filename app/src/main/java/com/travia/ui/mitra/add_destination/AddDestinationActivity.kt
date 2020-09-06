@@ -18,6 +18,7 @@ import com.travia.databinding.ActivityAddDestinationBinding
 import com.travia.ui.mitra.MapActivity
 import com.travia.ui.mitra.add_destination.SetScheduleDestinationActivity.Companion.TAG_DESTINATION_DETAIL
 import com.travia.utils.LoadingDialogUtil
+import com.travia.utils.showToast
 
 class AddDestinationActivity : AppCompatActivity() {
 
@@ -51,10 +52,14 @@ class AddDestinationActivity : AppCompatActivity() {
 
         binding.apply {
 
-            val adapterCategory = ArrayAdapter(this@AddDestinationActivity,
-                R.layout.item_category, destinationCategory)
+//            val adapterCategory = ArrayAdapter(this@AddDestinationActivity,
+//                R.layout.item_category, destinationCategory)
 
-            actDestinationCategory.setAdapter(adapterCategory)
+//            actDestinationCategory.setAdapter(adapterCategory)
+
+            val adapter =  ArrayAdapter.createFromResource(baseContext, R.array.kategori_wisata_string, R.layout.list_item)
+
+            spinnerCategoryDestination.adapter = adapter
 
             btnAddLocation.setOnClickListener {
                 startActivityForResult(Intent(this@AddDestinationActivity, MapActivity::class.java), REQ_LOCATION)
@@ -75,8 +80,8 @@ class AddDestinationActivity : AppCompatActivity() {
                 !tieDestinationDescription.text.toString().isNotBlank() -> {
                     tilDestinationDescription.error = "Isikan deskripsi tempat wisata"
                 }
-                !actDestinationCategory.text.isNotBlank() -> {
-                    tilDestinationCategory.error = "Pilih kategori tempat wisata"
+                spinnerCategoryDestination.selectedItemPosition == 0 -> {
+                    showToast(this@AddDestinationActivity, "Pilih Kategori Tempat Wisata ")
                 }
                 !isLocationTaken && locationModel == null -> {
                     Toast.makeText(this@AddDestinationActivity, "Mohon untuk memilih location tempat wisata !", Toast.LENGTH_SHORT).show()
@@ -92,7 +97,7 @@ class AddDestinationActivity : AppCompatActivity() {
                     submitDestination(
                         name = tieDestinationName.text.toString(),
                         description = tieDestinationDescription.text.toString(),
-                        category = actDestinationCategory.text.toString(),
+                        category = spinnerCategoryDestination.selectedItem.toString(),
                         price = tieDestinationPrice.text.toString(),
                         video_link = tieDestinationVideoLink.text.toString()
                     )
