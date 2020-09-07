@@ -14,4 +14,8 @@ class WisataRepository(private val wisataDao: WisataDao) {
     suspend fun deleteAllWisata() {
         wisataDao.deleteAll()
     }
+
+    fun search(sql: String, ktgr:String): LiveData<List<WisataEntity>> {
+        return wisataDao.getPencarian(sql,ktgr)
+    }
 }

@@ -24,4 +24,8 @@ class WisataViewModel() :ViewModel(){
         repository.deleteAllWisata()
         repository.insertAllWisata(users)
     }
+
+    fun search(query: String, kategori:String): LiveData<List<WisataEntity>>{
+        return repository.search(query, kategori)
+    }
 }

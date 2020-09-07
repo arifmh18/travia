@@ -18,4 +18,7 @@ interface WisataDao{
 
     @Query("DELETE FROM wisata")
     suspend fun deleteAll()
+
+    @Query("SELECT * FROM wisata WHERE nama LIKE :query AND kategory = :kategori")
+    fun getPencarian (query:String, kategori:String):LiveData<List<WisataEntity>>
 }
