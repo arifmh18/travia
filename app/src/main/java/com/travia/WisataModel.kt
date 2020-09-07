@@ -1,11 +1,7 @@
 package com.travia
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
-@Entity(tableName = "wisata")
 data class WisataModel(
-    @PrimaryKey val uuid: String,
+    val uuid: String,
     val nama: String,
     val deskripsi: String,
     val kategory: String,

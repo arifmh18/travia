@@ -51,7 +51,7 @@ class ProfilFragment : Fragment() {
             btnLogout.setOnClickListener {
                 auth.signOut()
                 startActivity(Intent(context, LoginActivity::class.java))
-                activity!!.finish()
+                requireActivity().finish()
             }
             btnEditWisata.setOnClickListener {
                 startActivity(Intent(requireContext(), AddDestinationActivity::class.java))
