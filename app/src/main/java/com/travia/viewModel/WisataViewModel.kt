@@ -8,6 +8,7 @@ import com.travia.WisataModel
 import com.travia.database.AppDatabase
 import com.travia.repository.WisataRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class WisataViewModel() :ViewModel(){
     lateinit var repository: WisataRepository
