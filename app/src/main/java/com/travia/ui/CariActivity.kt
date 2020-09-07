@@ -18,7 +18,10 @@ class CariActivity : AppCompatActivity() {
     }
 
     private fun init() {
+
+        val intent = intent.extras
         binding.apply {
+            tbCari.title = "Search Wisata"
             tbCari.setOnClickListener {
                 startActivity(Intent(this@CariActivity, MainActivity::class.java))
                 finish()

@@ -1,13 +1,13 @@
 package com.travia.repository
 
 import androidx.lifecycle.LiveData
-import com.travia.WisataModel
 import com.travia.database.dao.WisataDao
+import com.travia.database.entity.WisataEntity
 
 class WisataRepository(private val wisataDao: WisataDao) {
-    val allWisata: LiveData<List<WisataModel>> = wisataDao.getAll()
+    val allWisata: LiveData<List<WisataEntity>> = wisataDao.getAll()
 
-    suspend fun insertAllWisata(wisata: List<WisataModel>) {
+    suspend fun insertAllWisata(wisata: List<WisataEntity>) {
         wisataDao.insertAll(wisata)
     }
 

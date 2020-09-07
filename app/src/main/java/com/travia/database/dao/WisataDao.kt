@@ -5,16 +5,16 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.travia.WisataModel
+import com.travia.database.entity.WisataEntity
 
 @Dao
 interface WisataDao{
 
     @Query("SELECT * FROM wisata")
-    fun getAll():LiveData<List<WisataModel>>
+    fun getAll():LiveData<List<WisataEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(coronas: List<WisataModel>)
+    suspend fun insertAll(coronas: List<WisataEntity>)
 
     @Query("DELETE FROM wisata")
     suspend fun deleteAll()
