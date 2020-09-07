@@ -20,7 +20,7 @@
     </string-array>
 
     <string-array name="kategori_wisata_string">
-        <item>Jenis Peralatan</item>
+        <item>Jenis Wisata</item>
         <item>Wisata Kota</item>
         <item>Wisata Alam</item>
     </string-array>
@@ -34,4 +34,8 @@
     <string name="travina_x_s">Travina X SmkCoding</string>
     <string name="dimohon_unt">Dimohon untuk menjaga privasi dan di mohon \nuntuk segera konfirmasi\nbila terjadi hal yang mencurigakan</string>
     <string name="pilih_metod">Pilih Metode Pembayaran</string>
+
+    <string name="add_destination">Tambah Wisata</string>
+    <string name="edit_destination">Edit Wisata</string>
+
 </resources>
