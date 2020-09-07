@@ -15,5 +15,5 @@ data class WisataModel(
     var jadwal: ScheduleModel? = null,
     val rekomendasi: Boolean = false
 ){
-    constructor(): this("", "", "", "", "", "", LocationModel("", "", ""), null)
+    constructor(): this("", "", "", "", "", "", LocationModel("", "", ""), null, false)
 }

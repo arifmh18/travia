@@ -6,5 +6,6 @@ data class EquipmentModel (
     var deskripsi: String? = null,
     var stok: String? = null,
     var harga: String? = null,
+    var kategori: String? = null,
     var syarat: List<RequirementModel>? = null
 )
