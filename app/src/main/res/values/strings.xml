@@ -37,5 +37,7 @@
 
     <string name="add_destination">Tambah Wisata</string>
     <string name="edit_destination">Edit Wisata</string>
+    <string name="want_rent_equipment">Dimana anda ingin \nmenyewa peralatan ?</string>
+    <string name="want_rent_vehicle">Dimana anda ingin \nmenyewa kendaraan ?</string>
 
 </resources>

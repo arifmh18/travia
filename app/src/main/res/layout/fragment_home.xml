@@ -249,7 +249,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayout6"
+                android:id="@+id/containerRentVehicle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -287,10 +287,10 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:padding="4dp"
-                app:layout_constraintEnd_toStartOf="@+id/linearLayout7"
+                app:layout_constraintEnd_toStartOf="@+id/containerRentEquipment"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/linearLayout6"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout6">
+                app:layout_constraintStart_toEndOf="@+id/containerRentVehicle"
+                app:layout_constraintTop_toTopOf="@+id/containerRentVehicle">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -311,7 +311,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayout7"
+                android:id="@+id/containerRentEquipment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -350,8 +350,8 @@
                 android:padding="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/linearLayout7"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout7">
+                app:layout_constraintStart_toEndOf="@+id/containerRentEquipment"
+                app:layout_constraintTop_toTopOf="@+id/containerRentEquipment">
 
                 <ImageView
                     android:layout_width="wrap_content"

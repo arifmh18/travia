@@ -19,6 +19,7 @@ import com.travia.R
 import com.travia.WisataModel
 import com.travia.databinding.FragmentHomeBinding
 import com.travia.ui.wisatawan.DestinationListActivity
+import com.travia.ui.wisatawan.EquipmentListActivity
 import com.travia.ui.wisatawan.list_destination.DestinationAdapter
 
 class HomeFragment : Fragment(), View.OnClickListener {
@@ -64,6 +65,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
             containerCityCategory.setOnClickListener(this@HomeFragment)
             containerNatureCategory.setOnClickListener(this@HomeFragment)
+            containerRentVehicle.setOnClickListener(this@HomeFragment)
+            containerRentEquipment.setOnClickListener(this@HomeFragment)
 
             rvPopularDestination.layoutManager = LinearLayoutManager(requireContext()).apply {
                 orientation = LinearLayoutManager.HORIZONTAL
@@ -113,6 +116,16 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 val intent = Intent(requireContext(), DestinationListActivity::class.java)
                 intent.putExtra(DestinationListActivity.DESTINATION_TYPE, DestinationListActivity.NATURE_TYPE)
                 intent.putExtra(DestinationListActivity.TOOLBAR_TITLE, "Wisata Alam")
+                startActivity(intent)
+            }
+            R.id.containerRentVehicle -> {
+                val intent = Intent(requireContext(), EquipmentListActivity::class.java)
+                intent.putExtra(EquipmentListActivity.EQUIPMENT_TYPE, EquipmentListActivity.RENT_VEHICLE)
+                startActivity(intent)
+            }
+            R.id.containerRentEquipment -> {
+                val intent = Intent(requireContext(), EquipmentListActivity::class.java)
+                intent.putExtra(EquipmentListActivity.EQUIPMENT_TYPE, EquipmentListActivity.RENT_EQUIPMENT)
                 startActivity(intent)
             }
         }
