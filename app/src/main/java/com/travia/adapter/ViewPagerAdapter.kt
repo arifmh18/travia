@@ -30,7 +30,7 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
                 ProfilFragment()
             }
             else -> {
-                BerandaFragment()
+                HomeFragment()
             }
         }
     }
