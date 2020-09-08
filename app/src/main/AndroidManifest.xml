@@ -13,12 +13,12 @@
             android:theme="@style/AppTheme.NoActionBar"
             />
         <activity
-            android:name=".ui.wisatawan.DestinationListActivity"
+            android:name=".ui.wisatawan.list_destination.DestinationListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.mitra.add_destination.SetScheduleDestinationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.wisatawan.EquipmentListActivity"
+        <activity android:name=".ui.wisatawan.list_equipment.EquipmentListActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ui.mitra.add_equipment.AddEquipmentActivity"

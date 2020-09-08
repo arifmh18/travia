@@ -1,15 +1,13 @@
-package com.travia.ui.wisatawan
+package com.travia.ui.wisatawan.list_destination
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.travia.R
 import com.travia.WisataModel
 import com.travia.databinding.ActivityDestinationListBinding
 import com.travia.ui.wisatawan.list_destination.DestinationAdapter

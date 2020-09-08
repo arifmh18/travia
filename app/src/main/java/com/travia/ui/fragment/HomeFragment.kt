@@ -13,7 +13,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.synnapps.carouselview.ImageListener
@@ -22,8 +21,8 @@ import com.travia.WisataModel
 import com.travia.database.entity.WisataEntity
 import com.travia.databinding.FragmentHomeBinding
 import com.travia.ui.CariActivity
-import com.travia.ui.wisatawan.DestinationListActivity
-import com.travia.ui.wisatawan.EquipmentListActivity
+import com.travia.ui.wisatawan.list_destination.DestinationListActivity
+import com.travia.ui.wisatawan.list_equipment.EquipmentListActivity
 import com.travia.ui.wisatawan.list_destination.DestinationAdapter
 import com.travia.viewModel.WisataViewModel
 

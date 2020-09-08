@@ -13,7 +13,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 import androidx.lifecycle.Observer
 import com.google.android.material.tabs.TabLayout
-import com.travia.ui.wisatawan.DestinationListActivity
+import com.travia.ui.wisatawan.list_destination.DestinationListActivity
 
 class CariActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCariBinding
