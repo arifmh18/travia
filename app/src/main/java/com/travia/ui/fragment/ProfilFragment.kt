@@ -14,6 +14,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.travia.ActivityEditProfile
 import com.travia.LoginActivity
 import com.travia.R
 import com.travia.databinding.FragmentProfilBinding
@@ -75,12 +76,29 @@ class ProfilFragment : Fragment() {
                             if (user!!.uid == data!!.uid) {
                                 binding.apply {
                                     if (data.foto == "Google") {
-                                        println("paap ${user.photoUrl}")
                                         Glide.with(context!!).load(user.photoUrl)
+                                            .into(photoProfile)
+                                    }else if (data.foto != "Tidak"){
+                                        Glide.with(context!!).load(data.foto)
                                             .into(photoProfile)
                                     }
                                     profileNama.text = data.nama
                                     profileEmail.text = data.email
+                                    btnEditProfile.setOnClickListener {
+                                        val i = Intent(requireContext(), ActivityEditProfile::class.java)
+                                        i.putExtra("nama", data.nama)
+                                        i.putExtra("email", data.email)
+                                        i.putExtra("phone", data.no_telp)
+                                        i.putExtra("jk", data.JK)
+                                        i.putExtra("pass", data.password)
+                                        i.putExtra("role", data.role)
+                                        if (data.foto == "Google") {
+                                            i.putExtra("img", user.photoUrl.toString())
+                                        }else{
+                                            i.putExtra("img", data.foto)
+                                        }
+                                        startActivity(i)
+                                    }
 
                                     //Check user role for hide / showing ui by their roles
                                     when (data.role) {

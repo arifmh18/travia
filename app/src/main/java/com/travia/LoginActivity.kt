@@ -46,6 +46,7 @@ class LoginActivity : AppCompatActivity() {
         ref = FirebaseDatabase.getInstance()
 
         if (auth.currentUser != null) {
+            loadingDialog.show()
             validasi()
         }
 
@@ -182,10 +183,12 @@ class LoginActivity : AppCompatActivity() {
                 } else {
                     startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                 }
+                loadingDialog.dismiss()
                 finish()
             }
 
             override fun onCancelled(error: DatabaseError) {
+                loadingDialog.dismiss()
                 TODO("Not yet implemented")
             }
         })

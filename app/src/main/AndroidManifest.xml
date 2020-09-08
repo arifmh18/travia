@@ -9,17 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.CariActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+        <activity
+            android:name=".ActivityEditProfile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.CariActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.wisatawan.DestinationListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.mitra.add_destination.SetScheduleDestinationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.wisatawan.EquipmentListActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ui.wisatawan.EquipmentListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.mitra.add_equipment.AddEquipmentActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -50,7 +54,7 @@
             android:theme="@style/AppThemeNoBar" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterMitra"
             android:theme="@style/AppThemeNoBar" />
