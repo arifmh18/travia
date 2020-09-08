@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.wisatawan.DestinationListActivity">
+    tools:context=".ui.wisatawan.list_destination.DestinationListActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

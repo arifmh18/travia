@@ -8,12 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.synnapps.carouselview.ImageListener
@@ -22,8 +22,8 @@ import com.travia.WisataModel
 import com.travia.database.entity.WisataEntity
 import com.travia.databinding.FragmentHomeBinding
 import com.travia.ui.CariActivity
-import com.travia.ui.wisatawan.DestinationListActivity
-import com.travia.ui.wisatawan.EquipmentListActivity
+import com.travia.ui.wisatawan.list_destination.DestinationListActivity
+import com.travia.ui.wisatawan.list_equipment.EquipmentListActivity
 import com.travia.ui.wisatawan.list_destination.DestinationAdapter
 import com.travia.viewModel.WisataViewModel
 
@@ -75,6 +75,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
             containerCityCategory.setOnClickListener(this@HomeFragment)
             containerNatureCategory.setOnClickListener(this@HomeFragment)
+            edtCari.isFocusable = false
             cari.setOnClickListener {
                 startActivity(Intent(context, CariActivity::class.java))
             }
@@ -85,6 +86,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 startActivity(Intent(context, CariActivity::class.java))
             }
             edtCari.addTextChangedListener {
+                startActivity(Intent(context, CariActivity::class.java))
+            }
+            homeCardSearch.setOnClickListener {
                 startActivity(Intent(context, CariActivity::class.java))
             }
             containerRentVehicle.setOnClickListener(this@HomeFragment)

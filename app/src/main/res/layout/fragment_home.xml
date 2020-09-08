@@ -24,6 +24,7 @@
                 android:weightSum="10">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/homeCardSearch"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="8"
@@ -43,18 +44,18 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="9"
+                            android:background="@null"
                             android:hint="Cari"
                             android:maxLines="1"
-                            android:textSize="16sp"
                             android:textAppearance="@style/LoginTitle"
-                            android:background="@null"/>
+                            android:textSize="16sp" />
 
                         <ImageView
                             android:id="@+id/logoCari"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:src="@drawable/ic_baseline_search_24"/>
+                            android:src="@drawable/ic_baseline_search_24" />
 
                     </LinearLayout>
 

@@ -11,12 +11,12 @@
     <TextView
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="50dp"
         android:background="@color/colorPrimary"
         android:gravity="center"
         android:text="Profile"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <com.facebook.shimmer.ShimmerFrameLayout
