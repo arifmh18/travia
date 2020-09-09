@@ -1,11 +1,15 @@
 package com.travia
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
 import com.travia.adapter.ViewPagerAdapter
 import com.travia.databinding.ActivityMainBinding
@@ -34,6 +38,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         init()
 
+        val fab: View = findViewById(R.id.fab)
+        fab.setOnClickListener { view ->
+            startActivity(Intent(this, ListPembayaran::class.java))
+        }
 //        val adapter = ViewPagerAdapter(this)
 //        view_pager.adapter = adapter
 //        TabLayoutMediator(

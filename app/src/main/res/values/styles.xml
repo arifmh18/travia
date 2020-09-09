@@ -154,5 +154,15 @@
         </item>
 
     </style>
+    <style name="nama_katego">
+
+        <item name="android:textSize">
+            30sp
+        </item>
+
+        <item name="android:textColor">#0B0B0B</item>
+
+    </style>
+
 
 </resources>
