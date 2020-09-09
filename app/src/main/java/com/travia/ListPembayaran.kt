@@ -11,6 +11,7 @@ class ListPembayaran : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_pembayaran)
+        //back end menyambungkan apps gojek dana ovo berhasil 
         gopay.setOnClickListener {
             val isAppInstalled: Boolean = appInstalledOrNot("com.gojek.app")
             if (isAppInstalled) {
