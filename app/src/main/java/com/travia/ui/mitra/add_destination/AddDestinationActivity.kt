@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.esafirm.imagepicker.features.ImagePicker
 import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -59,10 +60,27 @@ class AddDestinationActivity : AppCompatActivity() {
 
             val adapter =  ArrayAdapter.createFromResource(baseContext, R.array.kategori_wisata_string, R.layout.list_item)
 
+            tbAddDestination.setNavigationOnClickListener {
+                finish()
+            }
+
             spinnerCategoryDestination.adapter = adapter
 
             btnAddLocation.setOnClickListener {
-                startActivityForResult(Intent(this@AddDestinationActivity, MapActivity::class.java), REQ_LOCATION)
+                startActivityForResult(
+                    Intent(this@AddDestinationActivity, MapActivity::class.java),
+                    REQ_LOCATION
+                )
+            }
+
+            cvAddImageAddDestination.setOnClickListener {
+                ImagePicker.create(this@AddDestinationActivity)
+                    .toolbarFolderTitle("Folder")
+                    .toolbarImageTitle("Tap untuk pilih")
+                    .includeVideo(false)
+                    .limit(5)
+                    .showCamera(false)
+                    .start(REQ_IMAGES)
             }
 
             btnAddDestination.setOnClickListener {
@@ -176,6 +194,10 @@ class AddDestinationActivity : AppCompatActivity() {
             }else if(resultCode == RESULT_CANCELED){
                 Log.d(TAG, "onActivityResult: dibatalkan oleh user")
             }
+        }else if (requestCode == REQ_IMAGES){
+            val images = ImagePicker.getImages(data)
+            
+
         }
     }
 
@@ -183,6 +205,7 @@ class AddDestinationActivity : AppCompatActivity() {
         const val REQ_LOCATION = 10
         const val ADD_DESTINATION = 0
         const val RESULT_LATLNG = "RESULT_LATLNG"
+        const val REQ_IMAGES = 20
         var TAG = AddDestinationActivity::class.java.simpleName
     }
 }

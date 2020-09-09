@@ -14,4 +14,6 @@
     <color name="white">#fff</color>
     <color name="black">#000</color>
 
+    <color name="blackTransparent55">#8C000000</color>
+
 </resources>
