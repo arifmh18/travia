@@ -1,6 +1,7 @@
 package com.travia.ui.mitra.add_destination
 
 import android.content.Context
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +14,7 @@ import java.io.File
 
 class AdapterImagesDestination(private val context: Context): RecyclerView.Adapter<AdapterImagesDestination.ViewHolder>() {
 
-    private val imageList = ArrayList<Image>()
+    private var imageList = ArrayList<Image>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
         LayoutInflater.from(context)
@@ -26,9 +27,13 @@ class AdapterImagesDestination(private val context: Context): RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(imageList[position])
+        holder.itemView.ivDeleteImageItem.setOnClickListener {
+            imageList.removeAt(position)
+            notifyItemRemoved(position)
+        }
     }
 
-    override fun getItemCount() = imageList.size
+    override fun getItemCount(): Int = imageList.size
 
     class ViewHolder(private val containerView: View): RecyclerView.ViewHolder(containerView) {
         fun bind(item: Image){
@@ -45,5 +50,9 @@ class AdapterImagesDestination(private val context: Context): RecyclerView.Adapt
 
     fun getImageList(): List<Image>{
         return imageList
+    }
+
+    companion object {
+        var TAG = AdapterImagesDestination::class.java.simpleName
     }
 }

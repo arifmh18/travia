@@ -1,5 +1,6 @@
 package com.travia.ui.fragment
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -29,6 +30,8 @@ class ProfilFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentProfilBinding
     private lateinit var ref: FirebaseDatabase
+
+    private lateinit var mContext: Context
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -139,15 +142,16 @@ class ProfilFragment : Fragment() {
                     for (data in snapshot.children) {
                         if (data.key == auth.currentUser?.uid) {
                             binding.apply {
-                                tvAddDestinationProfile.text = getString(R.string.edit_destination)
+                                tvAddDestinationProfile.text = mContext.getString(R.string.edit_destination)
                             }
+                            break
                         } else {
                             binding.apply {
-                                tvAddDestinationProfile.text = getString(R.string.add_destination)
+                                tvAddDestinationProfile.text = mContext.getString(R.string.add_destination)
                             }
                         }
-                        hideShimmer()
                     }
+                    hideShimmer()
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -164,6 +168,11 @@ class ProfilFragment : Fragment() {
             containerProfileShimmer.hide()
             containerProfile.show()
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mContext = context
     }
 
     companion object {

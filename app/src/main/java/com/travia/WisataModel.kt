@@ -5,11 +5,12 @@ data class WisataModel(
     val nama: String,
     val deskripsi: String,
     val kategory: String,
+    var gambar: List<String>? = null,
     val harga: String,
     val video_link: String,
     val location: LocationModel,
     var jadwal: ScheduleModel? = null,
     val rekomendasi: Boolean = false
 ){
-    constructor(): this("", "", "", "", "", "", LocationModel("", "", ""), null, false)
+    constructor(): this("", "", "", "", emptyList<String>(), "", "", LocationModel("", "", ""), null, false)
 }

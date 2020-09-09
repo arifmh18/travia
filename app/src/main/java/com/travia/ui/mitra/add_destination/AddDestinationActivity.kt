@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.esafirm.imagepicker.features.ImagePicker
 import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.auth.FirebaseAuth
@@ -32,6 +34,8 @@ class AddDestinationActivity : AppCompatActivity() {
 
     private val destinationCategory = listOf("Wisata Kota", "Wisata Alam")
 
+    private lateinit var adapterImages: AdapterImagesDestination
+
     private var isLocationTaken = false
     private var locationModel: LocationModel? = null
 
@@ -53,12 +57,8 @@ class AddDestinationActivity : AppCompatActivity() {
 
         binding.apply {
 
-//            val adapterCategory = ArrayAdapter(this@AddDestinationActivity,
-//                R.layout.item_category, destinationCategory)
-
-//            actDestinationCategory.setAdapter(adapterCategory)
-
             val adapter =  ArrayAdapter.createFromResource(baseContext, R.array.kategori_wisata_string, R.layout.list_item)
+            adapterImages = AdapterImagesDestination(this@AddDestinationActivity)
 
             tbAddDestination.setNavigationOnClickListener {
                 finish()
@@ -86,6 +86,12 @@ class AddDestinationActivity : AppCompatActivity() {
             btnAddDestination.setOnClickListener {
                 checkForm()
             }
+
+            rvImagesAddDestination.layoutManager = LinearLayoutManager(this@AddDestinationActivity).apply {
+                orientation = RecyclerView.HORIZONTAL
+            }
+            rvImagesAddDestination.adapter = adapterImages
+
         }
     }
 
@@ -103,6 +109,9 @@ class AddDestinationActivity : AppCompatActivity() {
                 }
                 !isLocationTaken && locationModel == null -> {
                     Toast.makeText(this@AddDestinationActivity, "Mohon untuk memilih location tempat wisata !", Toast.LENGTH_SHORT).show()
+                }
+                adapterImages.getImageList().isEmpty() -> {
+                    Toast.makeText(this@AddDestinationActivity, "Pilih minimal satu gambar !", Toast.LENGTH_SHORT).show()
                 }
                 !tieDestinationPrice.text.toString().isNotBlank() -> {
                     tilDestinationPrice.error = "Isikan harga masuk tempat wisata"
@@ -134,11 +143,18 @@ class AddDestinationActivity : AppCompatActivity() {
             else -> "alam"
         }
 
+        val pathList = ArrayList<String>()
+
+        for (image in adapterImages.getImageList()){
+            pathList.add(image.path)
+        }
+
         val wisataModel = WisataModel(
             uuid = auth.currentUser?.uid.toString(),
             nama = name,
             deskripsi = description,
             kategory = mCategory,
+            gambar = pathList,
             harga = price,
             video_link = video_link,
             location = locationModel!!
@@ -151,21 +167,6 @@ class AddDestinationActivity : AppCompatActivity() {
 
         intent.putExtra(TAG_DESTINATION_DETAIL, wisataString)
         startActivityForResult(intent, 0)
-
-        /*
-        database.reference.child("wisata").push()
-            .setValue(wisataModel)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful){
-                    Toast.makeText(this, "Berhasil tambah wisata", Toast.LENGTH_SHORT).show()
-                    loadingDialogUtil.dismiss()
-                }else {
-                    Toast.makeText(this, "${task.exception}", Toast.LENGTH_SHORT).show()
-                    loadingDialogUtil.dismiss()
-                }
-            }
-
-         */
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -196,8 +197,12 @@ class AddDestinationActivity : AppCompatActivity() {
             }
         }else if (requestCode == REQ_IMAGES){
             val images = ImagePicker.getImages(data)
-            
 
+            if (images.size > 0){
+                for (image in images){
+                    adapterImages.addImage(image)
+                }
+            }
         }
     }
 
