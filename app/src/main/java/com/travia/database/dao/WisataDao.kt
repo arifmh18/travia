@@ -14,7 +14,7 @@ interface WisataDao{
     fun getAll():LiveData<List<WisataEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(coronas: List<WisataEntity>)
+    suspend fun insertAll(wisata: List<WisataEntity>)
 
     @Query("DELETE FROM wisata")
     suspend fun deleteAll()
