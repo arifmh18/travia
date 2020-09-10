@@ -163,6 +163,73 @@
         <item name="android:textColor">#0B0B0B</item>
 
     </style>
+    <style name="nama_wisata">
+
+        <item name="android:textSize">
+            24sp
+        </item>
+
+        <item name="android:textColor">
+            #FB7948
+        </item>
+
+    </style>
+    <style name="rp_50xxxxx_">
+
+        <item name="android:textSize">
+            10sp
+        </item>
+
+        <item name="android:textColor">
+            #FF0404
+        </item>
+
+    </style>
+    <style name="lumajang_ea">
+
+        <item name="android:textSize">
+            10sp
+        </item>
+
+        <item name="android:textColor">
+            #0A0A0A
+        </item>
+
+    </style>
+    <style name="some_id">
+
+        <item name="android:textSize">
+            11sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+    <style name="foto">
+
+        <item name="android:textSize">
+            10sp
+        </item>
+
+        <item name="android:textColor">
+            #FB7948
+        </item>
+
+    </style>
+
+    <style name="lorem_ipsum">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
 
 
 </resources>
