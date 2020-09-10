@@ -27,6 +27,8 @@
         <activity
             android:name=".ui.mitra.add_equipment.AddEquipmentActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ListPembayaran"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
