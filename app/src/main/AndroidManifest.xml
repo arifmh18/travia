@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.pemandu.DetailPemanduActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".ActivityEditProfile"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -21,8 +24,9 @@
         <activity
             android:name=".ui.mitra.add_destination.SetScheduleDestinationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.wisatawan.list_equipment.EquipmentListActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ui.wisatawan.list_equipment.EquipmentListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.mitra.add_equipment.AddEquipmentActivity"
             android:theme="@style/AppTheme.NoActionBar" />

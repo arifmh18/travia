@@ -19,6 +19,7 @@ import com.google.firebase.storage.StorageReference
 import com.travia.databinding.ActivityEditProfileBinding
 import com.travia.model.Users
 import com.travia.utils.LoadingDialogUtil
+import com.travia.utils.PICK_IMAGE_REQUEST
 import com.travia.utils.getRandomString
 import com.travia.utils.showToast
 import java.io.ByteArrayOutputStream
@@ -26,8 +27,7 @@ import java.io.IOException
 
 class ActivityEditProfile : AppCompatActivity() {
     private lateinit var binding: ActivityEditProfileBinding
-    private val PICK_IMAGE_REQUEST = 100
-    private lateinit var filePath:Uri
+    private var filePath: Uri? = null
     private lateinit var loadingDialog: LoadingDialogUtil
     private lateinit var img: String
     lateinit var mref: DatabaseReference
@@ -61,7 +61,7 @@ class ActivityEditProfile : AppCompatActivity() {
                 else -> 0
             }
             img = i.getString("img")!!
-            if (img != "tidak" && img != null) {
+            if (img != "Tidak" && img != "") {
                 Glide.with(this@ActivityEditProfile).load(img).into(pickFoto)
             }
             edpJk.adapter = adpter
@@ -120,7 +120,7 @@ class ActivityEditProfile : AppCompatActivity() {
 
     private fun uploadImg() {
         val rand = getRandomString(12)
-        val storRef = storageReference.child("Users/Fotos/$rand")
+        val storRef = storageReference.child(rand)
         binding.pickFoto.isDrawingCacheEnabled = true
         binding.pickFoto.buildDrawingCache()
         val bitmap = (binding.pickFoto.drawable as BitmapDrawable).bitmap
@@ -160,7 +160,7 @@ class ActivityEditProfile : AppCompatActivity() {
                     val bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, filePath)
                     binding.pickFoto.setImageBitmap(bitmap)
                 } catch (e: IOException) {
-                    e.printStackTrace()
+                    print("Error pap: ${e.printStackTrace()}")
                 }
             }
         }
