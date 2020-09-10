@@ -1,10 +1,10 @@
 package com.travia
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -17,12 +17,12 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.travia.databinding.ActivityRegisterUserBinding
 import com.travia.model.Users
+import com.travia.ui.mitra.add_destination.AddDestinationActivity
+import com.travia.ui.pemandu.DetailPemanduActivity
 import com.travia.utils.LoadingDialogUtil
 import com.travia.utils.TAG_GOOGLE_CLIENT_ID
 import com.travia.utils.showToast
-import kotlinx.android.synthetic.main.activity_register_mitra.*
 import kotlinx.android.synthetic.main.activity_register_user.*
-import kotlinx.android.synthetic.main.activity_register_user.btn_register
 
 class RegisterUser : AppCompatActivity() {
 
@@ -85,6 +85,7 @@ class RegisterUser : AppCompatActivity() {
     }
 
     private fun formValidasi() {
+        loadingDialog.show()
         binding.apply {
             when {
                 edtNama.text.isNullOrBlank() -> {
@@ -132,17 +133,30 @@ class RegisterUser : AppCompatActivity() {
                     ref.getReference("users").child(auth.currentUser!!.uid).setValue(data)
                         .addOnCompleteListener { rest ->
                             if (rest.isSuccessful) {
-                                startActivity(Intent(this@RegisterUser, MainActivity::class.java))
+                                loadingDialog.dismiss()
+                                val i: Intent = if (binding.edtRole.selectedItemPosition == 3) {
+                                    Intent(this@RegisterUser, DetailPemanduActivity::class.java)
+                                } else if (binding.edtRole.selectedItemPosition == 2) {
+                                    Intent(
+                                        this@RegisterUser,
+                                        AddDestinationActivity::class.java
+                                    )
+                                } else {
+                                    Intent(this@RegisterUser, MainActivity::class.java)
+                                }
+                                startActivity(i)
                                 finish()
                             }
                         }
                         .addOnFailureListener { err ->
                             showToast(this@RegisterUser, "error : " + err.message)
+                            loadingDialog.dismiss()
                         }
                 }
             }
             .addOnFailureListener {
                 showToast(this@RegisterUser, "Error : " + it.message)
+                loadingDialog.dismiss()
             }
     }
 
