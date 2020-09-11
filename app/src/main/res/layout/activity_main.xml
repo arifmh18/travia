@@ -36,6 +36,16 @@
         android:layout_alignParentBottom="true"
         app:menu="@menu/menu_bottom_nav_main"
         app:backgroundTint="@android:color/white"
-        app:labelVisibilityMode="labeled"/>
+        app:labelVisibilityMode="labeled">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rupiah"
+            android:layout_marginLeft="175dp"
+            app:backgroundTint="@color/colorPrimary"
+            app:fabSize="normal" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 
 </RelativeLayout>
