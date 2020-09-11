@@ -29,6 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="79dp"
@@ -146,6 +147,41 @@
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    android:layout_margin="2dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/per"
+                            android:layout_width="60dp"
+                            android:layout_height="14dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="12dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="5dp"
+                            android:text="Rekomendasi"
+                            android:textAppearance="@style/foto"
+                            android:gravity="center_vertical"
+                            />
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recylerview_rekomend"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@+id/tabKategori"
+                                android:background="@color/white"
+                                android:paddingTop="5dp" />
+                        </ScrollView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
                     android:layout_height="136dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp"
@@ -189,6 +225,7 @@
                         </ScrollView>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
@@ -248,41 +285,6 @@
                             android:textAppearance="@style/lorem_ipsum"
                             android:gravity="center_vertical"
                             />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    android:layout_margin="2dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:orientation="vertical">
-                        <TextView
-                            android:id="@+id/per"
-                            android:layout_width="60dp"
-                            android:layout_height="14dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="12dp"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="5dp"
-                            android:text="Rekomendasi"
-                            android:textAppearance="@style/foto"
-                            android:gravity="center_vertical"
-                            />
-                        <ScrollView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/recylerview_rekomend"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_below="@+id/tabKategori"
-                                android:background="@color/white"
-                                android:paddingTop="5dp" />
-                        </ScrollView>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
