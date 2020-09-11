@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginVertical="4dp"
-    android:layout_marginHorizontal="16dp"
+    android:layout_marginHorizontal="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp">
 
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/LoginTitle"
                 android:textSize="12sp"
-                android:maxLines="1"
+                android:maxLines="2"
                 android:ellipsize="end"
                 android:textColor="@color/ef_grey"
                 android:text="Deskripsi Kuliner"/>
@@ -48,7 +48,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/LoginTitle"
+                android:layout_marginTop="8dp"
                 android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textColor="@color/ef_grey"
                 android:text="Nama Kuliner"/>
 

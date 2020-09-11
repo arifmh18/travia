@@ -14,7 +14,7 @@ import com.travia.database.entity.WisataEntity
 
 @Database(
     entities = [WisataEntity::class, PemesananEntity::class, TransaksiEntity::class],
-    version = 5,
+    version = 6,
     exportSchema = false
 )
 abstract class AppDatabase:RoomDatabase() {
@@ -38,7 +38,9 @@ abstract class AppDatabase:RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "travina_database"
-                ).build()
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 return instance
             }

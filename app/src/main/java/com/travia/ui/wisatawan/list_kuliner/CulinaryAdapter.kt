@@ -1,6 +1,7 @@
 package com.travia.ui.wisatawan.list_kuliner
 
 import android.content.Context
+import android.content.Intent
 import android.view.View
 import android.view.ViewGroup
 import android.view.LayoutInflater
@@ -34,6 +35,12 @@ class CulinaryAdapter(private val context: Context): RecyclerView.Adapter<Culina
             containerView.tvNameCulinaryItem.text = item.nama
             containerView.tvDeskripsiCulinaryItem.text = item.deskripsi
             containerView.tvLocationNameCulinaryItem.text = item.lokasi.name
+
+            containerView.setOnClickListener {
+                val intent = Intent(containerView.context, DetailCulinaryActivity::class.java)
+                intent.putExtra(DetailCulinaryActivity.ID_CULINARY, item.id_wisata)
+                containerView.context.startActivity(intent)
+            }
 
             Glide.with(containerView.context)
                 .load(item.gambar)

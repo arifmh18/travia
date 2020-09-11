@@ -28,7 +28,8 @@
         <activity
             android:name=".ui.mitra.add_equipment.AddEquipmentActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ListPembayaran"
+        <activity
+            android:name=".ListPembayaran"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
@@ -61,7 +62,10 @@
         <activity
             android:name=".RegisterMitra"
             android:theme="@style/AppThemeNoBar" />
-        <activity android:name=".ui.wisatawan.list_kuliner.CulinaryListActivity"
+        <activity
+            android:name=".ui.wisatawan.list_kuliner.CulinaryListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.wisatawan.list_kuliner.DetailCulinaryActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
