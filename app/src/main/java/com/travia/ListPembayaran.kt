@@ -45,6 +45,10 @@ class ListPembayaran : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+
+        icon_naviga.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun appInstalledOrNot(uri: String): Boolean {

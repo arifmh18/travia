@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Detail_Wisata">
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -81,7 +80,6 @@
                                 android:layout_alignParentTop="true"
                                 android:layout_marginLeft="11dp"
                                 android:layout_alignParentBottom="true"
-                                android:clipToOutline="true"
                                 android:orientation="horizontal">
                                 <RelativeLayout
                                     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -92,9 +90,7 @@
                                     android:layout_alignParentRight="true"
                                     android:layout_alignParentTop="true"
                                     android:layout_alignParentBottom="true"
-                                    android:clipToOutline="true"
-                                    android:background="@drawable/ic_mapp"
-                                    />
+                                    android:background="@drawable/ic_mapp" />
 
                                 <TextView
                                     android:id="@+id/lumajang_ea"
@@ -122,7 +118,6 @@
                                 android:layout_alignParentBottom="true"
                                 android:layout_marginLeft="115dp"
                                 android:layout_marginTop="25dp"
-                                android:clipToOutline="true"
                                 android:orientation="horizontal">
 
                                 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -132,8 +127,7 @@
                                     android:layout_alignParentTop="true"
                                     android:layout_marginLeft="1dp"
                                     android:layout_marginTop="10dp"
-                                    android:background="@drawable/ic_clock"
-                                    android:clipToOutline="true" />
+                                    android:background="@drawable/ic_clock" />
 
                                 <TextView
                                     android:id="@+id/some_id"

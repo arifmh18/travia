@@ -39,6 +39,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private lateinit var database: FirebaseDatabase
 
     private val sampleImage = arrayOf(
+        R.drawable.slider1,
+        R.drawable.slider2,
+        R.drawable.slider3,
         R.drawable.wisata_pujon_kidul,
         R.drawable.bromo_tengger_semeru_national_park,
         R.drawable.lawang_sewu

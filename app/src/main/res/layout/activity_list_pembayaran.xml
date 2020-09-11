@@ -8,38 +8,42 @@
     tools:context=".ListPembayaran">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="?attr/actionBarSize">
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp"
             app:contentInsetEnd="0dp"
             app:contentInsetStart="0dp">
-            <View
-                android:id="@+id/icon_naviga"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true"
-                android:background="@drawable/ic_panah"
-                />
 
-            <TextView
-                android:id="@+id/pilih_metod"
-                android:layout_width="172dp"
-                android:layout_height="20dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="-8dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/pilih_metod"
-                android:textAppearance="@style/pilih_metod" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
 
 
+                <TextView
+                    android:id="@+id/pilih_metod"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:text="@string/pilih_metod"
+                    android:textAppearance="@style/pilih_metod"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/icon_naviga"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/icon_naviga"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="0dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:src="@drawable/ic_panah"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
     <androidx.cardview.widget.CardView
