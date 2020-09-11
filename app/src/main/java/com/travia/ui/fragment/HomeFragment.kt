@@ -25,6 +25,7 @@ import com.travia.ui.CariActivity
 import com.travia.ui.wisatawan.list_destination.DestinationListActivity
 import com.travia.ui.wisatawan.list_equipment.EquipmentListActivity
 import com.travia.ui.wisatawan.list_destination.DestinationAdapter
+import com.travia.ui.wisatawan.list_kuliner.CulinaryListActivity
 import com.travia.viewModel.WisataViewModel
 
 class HomeFragment : Fragment(), View.OnClickListener {
@@ -75,6 +76,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
             containerCityCategory.setOnClickListener(this@HomeFragment)
             containerNatureCategory.setOnClickListener(this@HomeFragment)
+            containerCulinary.setOnClickListener(this@HomeFragment)
             edtCari.isFocusable = false
             cari.setOnClickListener {
                 startActivity(Intent(context, CariActivity::class.java))
@@ -184,6 +186,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 val intent = Intent(requireContext(), EquipmentListActivity::class.java)
                 intent.putExtra(EquipmentListActivity.EQUIPMENT_TYPE, EquipmentListActivity.RENT_EQUIPMENT)
                 startActivity(intent)
+            }
+            R.id.containerCulinary -> {
+                startActivity(Intent(requireContext(), CulinaryListActivity::class.java))
             }
         }
     }

@@ -10,7 +10,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.wisatawan.list_kuliner.CulinaryListActivity"></activity>
         <activity
             android:name=".ActivityEditProfile"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -60,6 +59,8 @@
         <activity
             android:name=".RegisterMitra"
             android:theme="@style/AppThemeNoBar" />
+        <activity android:name=".ui.wisatawan.list_kuliner.CulinaryListActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
