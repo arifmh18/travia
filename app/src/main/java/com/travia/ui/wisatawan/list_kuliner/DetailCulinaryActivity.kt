@@ -3,6 +3,7 @@ package com.travia.ui.wisatawan.list_kuliner
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -49,6 +50,8 @@ class DetailCulinaryActivity : AppCompatActivity(), OnMapReadyCallback {
             tbDetailCulinary.setNavigationOnClickListener {
                 finish()
             }
+            collapsingDetailCulinary.setExpandedTitleColor(ContextCompat.getColor(this@DetailCulinaryActivity, android.R.color.transparent))
+            collapsingDetailCulinary.setCollapsedTitleTextColor(ContextCompat.getColor(this@DetailCulinaryActivity, android.R.color.white))
         }
 
         val mapFragment = SupportMapFragment.newInstance()
@@ -89,6 +92,9 @@ class DetailCulinaryActivity : AppCompatActivity(), OnMapReadyCallback {
                 tvCulinaryNameDetail.text = culinary.nama
                 tvCulinaryDescriptionDetail.text = culinary.deskripsi
                 tvCulinaryLocationDetail.text = culinary.lokasi.name
+                tvCulinaryPriceDetail.text = culinary.harga
+
+                tbDetailCulinary.title = culinary.nama
 
                 val latLngIndo = LatLng(culinary.lokasi.latitude.toDouble(), culinary.lokasi.longitude.toDouble())
 
