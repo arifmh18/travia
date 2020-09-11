@@ -1,103 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.pemandu.DetailListActivity">
 
-    <ImageView
-        android:id="@+id/imgDePemandu"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/colorBlue" />
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
-    <View
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:background="@drawable/ic_baseline_arrow_back_24" />
-
-    <TextView
-        android:id="@+id/txtDeNama"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_below="@+id/imgDePemandu"
-        android:fontFamily="@font/secular_one_regular"
-        android:textSize="20dp"
-        android:text="nama" />
-
-    <TextView
-        android:id="@+id/moto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Moto"
-        android:layout_below="@+id/txtDeNama"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15sp" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_below="@+id/moto"
-        android:layout_marginTop="5dp">
-
-        <TextView
-            android:layout_margin="5dp"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Isi Moto" />
-    </androidx.cardview.widget.CardView>
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/harga"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Harga"
-        android:layout_below="@+id/card"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15sp" />
+            <ImageView
+                android:id="@+id/imgDePemandu"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/wisata_pujon_kidul"
+                android:scaleType="centerCrop"
+                android:contentDescription="PP" />
 
-    <TextView
-        android:id="@+id/txtDeHarga"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Harga"
-        android:layout_below="@+id/harga"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="5dp"
-        android:textColor="@color/black"
-        android:textSize="15sp" />
+            <View
+                android:id="@+id/btnBack"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/ic_baseline_arrow_back_24" />
 
-    <TextView
-        android:id="@+id/phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="No telepon"
-        android:layout_below="@+id/txtDeHarga"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15sp" />
+            <TextView
+                android:id="@+id/txtDeNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/imgDePemandu"
+                android:fontFamily="@font/secular_one_regular"
+                android:textSize="20dp"
+                android:text="nama" />
 
-    <TextView
-        android:id="@+id/txtDephone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Harga"
-        android:layout_below="@+id/phone"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="5dp"
-        android:textColor="@color/black"
-        android:textSize="15sp" />
+            <TextView
+                android:id="@+id/moto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Moto"
+                android:layout_below="@+id/txtDeNama"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp" />
 
-</RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_below="@+id/moto"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/txtDeMoto"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Isi Moto" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/harga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Harga"
+                android:layout_below="@+id/card"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtDeHarga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Harga"
+                android:layout_below="@+id/harga"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No telepon"
+                android:layout_below="@+id/txtDeHarga"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtDephone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Telp"
+                android:layout_below="@+id/phone"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>
