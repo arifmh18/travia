@@ -22,6 +22,7 @@ import com.travia.WisataModel
 import com.travia.database.entity.WisataEntity
 import com.travia.databinding.FragmentHomeBinding
 import com.travia.ui.CariActivity
+import com.travia.ui.pemandu.ListPemanduActivity
 import com.travia.ui.wisatawan.list_destination.DestinationListActivity
 import com.travia.ui.wisatawan.list_equipment.EquipmentListActivity
 import com.travia.ui.wisatawan.list_destination.DestinationAdapter
@@ -96,6 +97,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
             rvPopularDestination.layoutManager = LinearLayoutManager(requireContext()).apply {
                 orientation = LinearLayoutManager.HORIZONTAL
+            }
+            linearLayout2.setOnClickListener {
+                startActivity(Intent(activity, ListPemanduActivity::class.java))
             }
             rvPopularDestination.adapter = adapter
 

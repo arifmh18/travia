@@ -25,6 +25,7 @@ import com.travia.WisataModel
 import com.travia.database.entity.WisataEntity
 import com.travia.databinding.ActivityDetailPemanduBinding
 import com.travia.model.PemanduModel
+import com.travia.model.Users
 import com.travia.utils.*
 import com.travia.viewModel.WisataViewModel
 import kotlinx.android.synthetic.main.activity_detail_pemandu.*
@@ -46,6 +47,7 @@ class DetailPemanduActivity : AppCompatActivity() {
         FirebaseStorage.getInstance().getReference("users/pemandu")
     private lateinit var img: String
     private lateinit var loadingDialog: LoadingDialogUtil
+    private lateinit var userData: Users
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -136,11 +138,28 @@ class DetailPemanduActivity : AppCompatActivity() {
                         uploadImg()
                     } else {
                         img = "Tidak"
-                        simpanData()
+                        getData()
                     }
                 }
             }
         }
+    }
+
+    private fun getData() {
+        ref.getReference("users/").child(user.uid)
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()) {
+                        userData = snapshot.getValue(Users::class.java)!!
+                        simpanData()
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    showToast(applicationContext, "Data Not found!!")
+                }
+
+            })
     }
 
 
@@ -166,7 +185,7 @@ class DetailPemanduActivity : AppCompatActivity() {
             showToast(this, "Berhasil Upload Foto!")
             it.metadata?.reference!!.downloadUrl.addOnSuccessListener { uri ->
                 img = uri.toString()
-                simpanData()
+                getData()
             }
         }
     }
@@ -174,12 +193,14 @@ class DetailPemanduActivity : AppCompatActivity() {
     private fun simpanData() {
         val data = PemanduModel(
             user.uid,
+            userData.nama,
             img,
             binding.edtPMoto.text.toString(),
             binding.edtPHarga.text.toString(),
             binding.edtPwaktu.text.toString(),
             id_wisata[binding.spinWisata.selectedItemPosition],
-            binding.spinStatus.selectedItem.toString()
+            binding.spinStatus.selectedItem.toString(),
+            userData.foto
         )
         ref.getReference("pemandu/").child(auth.uid!!).setValue(data)
             .addOnCompleteListener { rest ->
