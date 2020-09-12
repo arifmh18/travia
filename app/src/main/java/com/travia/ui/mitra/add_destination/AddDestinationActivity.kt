@@ -160,12 +160,13 @@ class AddDestinationActivity : AppCompatActivity() {
             location = locationModel!!
         )
 
-        val intent = Intent(this, SetScheduleDestinationActivity::class.java)
+//        val intent = Intent(this, SetScheduleDestinationActivity::class.java)
+        val intent = Intent(this, SetRequirementActivity::class.java)
         val wisataString = Gson().toJson(wisataModel)
 
         loadingDialogUtil.dismiss()
 
-        intent.putExtra(TAG_DESTINATION_DETAIL, wisataString)
+        intent.putExtra(SetRequirementActivity.TAG_DESTINATION_DETAIL, wisataString)
         startActivityForResult(intent, 0)
     }
 

@@ -10,7 +10,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.wisatawan.list_equipment.DetailEquipmentActivity"></activity>
         <activity android:name=".ui.mitra.add_destination.SetRequirementActivity" />
         <activity
             android:name=".ui.pemandu.DetailListActivity"
@@ -79,6 +78,8 @@
         <activity
             android:name=".ui.wisatawan.list_kuliner.DetailCulinaryActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.wisatawan.list_equipment.DetailEquipmentActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
