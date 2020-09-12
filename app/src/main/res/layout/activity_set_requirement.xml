@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/parentViewSetRequirementDestination"
     tools:context=".ui.mitra.add_destination.SetRequirementActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -30,14 +31,34 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_baseline_info_24"/>
+            app:drawableStartCompat="@drawable/ic_baseline_info_24"
+            android:drawablePadding="8dp"
+            android:text="Tambah persyaratan untuk wisata anda"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDestinationRequirement"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="4dp"
-            />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"/>
+
+        <Button
+            android:id="@+id/btnAddRequirementDestination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tambah persyaratan"
+            android:textAppearance="@style/LoginTitle"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnAddDestination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atur Jadwal Buka Wisata"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textAppearance="@style/LoginTitle"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
 
     </LinearLayout>
 
