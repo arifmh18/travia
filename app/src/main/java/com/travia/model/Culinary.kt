@@ -3,6 +3,7 @@ package com.travia.model
 import com.travia.LocationModel
 
 data class Culinary(
+    val id_wisata: String,
     val nama: String,
     val deskripsi: String,
     val harga: String,
@@ -11,5 +12,5 @@ data class Culinary(
     val kategori: String,
     val rekomendasi: Boolean
 ){
-    constructor(): this("", "", "", "", LocationModel("", "", ""), "", false)
+    constructor(): this("","", "", "", "", LocationModel("", "", ""), "", false)
 }

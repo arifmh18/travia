@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.wisatawan.list_equipment.DetailEquipmentActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingDetailEquipment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivDetailEquipment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="center"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_black_transparent" />
+
+                <TextView
+                    android:id="@+id/tvEquipmentNameDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:textAppearance="@style/LoginTitle"
+                    android:textSize="24sp"
+                    android:text="Nama Perlengkapan"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tbDetailEquipment"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_24"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi"
+                android:textAppearance="@style/LoginTitle"
+                android:textSize="12sp"
+                android:textColor="@color/ef_grey"/>
+
+            <TextView
+                android:id="@+id/tvEquipmentDescriptionDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi"
+                android:textAppearance="@style/LoginTitle"
+                android:textSize="16sp"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Harga"
+                android:textAppearance="@style/LoginTitle"
+                android:textSize="12sp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/ef_grey"/>
+
+            <TextView
+                android:id="@+id/tvEquipmentPriceDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Harga"
+                android:textAppearance="@style/LoginTitle"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stok"
+                android:textAppearance="@style/LoginTitle"
+                android:textSize="12sp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/ef_grey"/>
+
+            <TextView
+                android:id="@+id/tvEquipmentStokDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stok"
+                android:textAppearance="@style/LoginTitle"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
+
+
+            <!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Lokasi"-->
+<!--                android:textAppearance="@style/LoginTitle"-->
+<!--                android:textColor="@color/ef_grey"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:textSize="12sp" />-->
+
+<!--            <FrameLayout-->
+<!--                android:id="@+id/flCulinaryMapDetail"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="200dp"-->
+<!--                android:name="com.google.android.gms.maps.SupportMapFragment"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvCulinaryLocationDetail"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Deskripsi"-->
+<!--                android:textAppearance="@style/LoginTitle"-->
+<!--                android:textSize="14sp"-->
+<!--                android:layout_marginTop="4dp"/>-->
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
