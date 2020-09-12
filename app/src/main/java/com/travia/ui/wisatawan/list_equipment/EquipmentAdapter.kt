@@ -1,6 +1,7 @@
 package com.travia.ui.wisatawan.list_equipment
 
 import android.content.Context
+import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +33,11 @@ class EquipmentAdapter (private val context: Context): RecyclerView.Adapter<Equi
         fun bind(item: EquipmentModel){
             containerView.tvNameDestinationItem.text = item.nama
             containerView.tvPriceDestinationItem.text = item.harga
+            containerView.setOnClickListener {
+                val intent = Intent(containerView.context, DetailEquipmentActivity::class.java)
+                intent.putExtra(DetailEquipmentActivity.EQUIPMENT_ID, item.uuid)
+                containerView.context.startActivity(intent)
+            }
         }
     }
 
