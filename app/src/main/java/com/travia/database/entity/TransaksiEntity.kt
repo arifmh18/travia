@@ -8,9 +8,10 @@ import java.util.*
 data class TransaksiEntity(
     @PrimaryKey val kd_tranksasi: String,
     val uid: String,
-    val total: Int,
+    val jumlah: String,
+    val total: String,
     val bayar: Boolean = false,
     val tanggal: String,
 ) {
-    constructor() : this("", "", 0, false, "")
+    constructor() : this("", "", "","", false, "")
 }
