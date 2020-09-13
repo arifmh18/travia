@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Detail_Wisata">
+    tools:context=".DetailWisata">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -31,161 +31,6 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="79dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    android:layout_margin="2dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="79dp"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginTop="5dp"
-                        android:orientation="horizontal"
-                        tools:ignore="MissingConstraints">
-
-                        <LinearLayout
-                            android:layout_width="200dp"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/nama_wisata"
-                                android:layout_width="188dp"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentLeft="true"
-                                android:layout_alignParentTop="true"
-                                android:layout_marginLeft="-6dp"
-                                android:layout_marginTop="2dp"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="Nama Wisata"
-                                android:textAppearance="@style/nama_wisata" />
-                            <TextView
-                                android:id="@+id/rp_50xxxxx_"
-                                android:layout_width="136dp"
-                                android:layout_height="21dp"
-                                android:layout_alignParentLeft="true"
-                                android:layout_marginLeft="11dp"
-                                android:layout_alignParentTop="true"
-                                android:layout_marginTop="1dp"
-                                android:text="Rp 50xxxxx / Orang / 3 Hari"
-                                android:textAppearance="@style/rp_50xxxxx_"
-                                android:gravity="center_horizontal|center_vertical"
-                                />
-                            <LinearLayout
-                                android:layout_width="130dp"
-                                android:layout_height="20dp"
-                                android:layout_alignParentLeft="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_alignParentTop="true"
-                                android:layout_marginLeft="11dp"
-                                android:layout_alignParentBottom="true"
-                                android:clipToOutline="true"
-                                android:orientation="horizontal">
-                                <RelativeLayout
-                                    xmlns:android="http://schemas.android.com/apk/res/android"
-                                    android:id="@+id/frame_3"
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:layout_alignParentLeft="true"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_alignParentTop="true"
-                                    android:layout_alignParentBottom="true"
-                                    android:clipToOutline="true"
-                                    android:background="@drawable/ic_mapp"
-                                    />
-
-                                <TextView
-                                    android:id="@+id/lumajang_ea"
-                                    android:layout_width="100dp"
-                                    android:layout_height="20dp"
-                                    android:layout_alignParentTop="true"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_alignParentBottom="true"
-                                    android:text="Lumajang Est Java"
-                                    android:textAppearance="@style/lumajang_ea" />
-                            </LinearLayout>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-
-                            <LinearLayout
-                                android:layout_width="130dp"
-                                android:layout_height="32dp"
-                                android:layout_alignParentLeft="true"
-                                android:layout_alignParentTop="true"
-                                android:layout_alignParentRight="true"
-                                android:layout_alignParentBottom="true"
-                                android:layout_marginLeft="115dp"
-                                android:layout_marginTop="25dp"
-                                android:clipToOutline="true"
-                                android:orientation="horizontal">
-
-                                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_alignParentLeft="true"
-                                    android:layout_alignParentTop="true"
-                                    android:layout_marginLeft="1dp"
-                                    android:layout_marginTop="10dp"
-                                    android:background="@drawable/ic_clock"
-                                    android:clipToOutline="true" />
-
-                                <TextView
-                                    android:id="@+id/some_id"
-                                    android:layout_width="60dp"
-                                    android:layout_height="16dp"
-                                    android:layout_alignParentLeft="true"
-                                    android:layout_alignParentTop="true"
-                                    android:layout_marginTop="11dp"
-                                    android:layout_marginLeft="1dp"
-                                    android:gravity="center_horizontal|center_vertical"
-                                    android:text="09.00/17.00"
-                                    android:textAppearance="@style/some_id" />
-                            </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    android:layout_margin="2dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:orientation="vertical">
-                        <TextView
-                            android:id="@+id/per"
-                            android:layout_width="60dp"
-                            android:layout_height="14dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="12dp"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="5dp"
-                            android:text="Rekomendasi"
-                            android:textAppearance="@style/foto"
-                            android:gravity="center_vertical"
-                            />
-                        <ScrollView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/recylerview_rekomend"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_below="@+id/tabKategori"
-                                android:background="@color/white"
-                                android:paddingTop="5dp" />
-                        </ScrollView>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="136dp"
@@ -231,6 +76,32 @@
                         </ScrollView>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabdetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/barSearch"
+                    android:background="@color/white">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Syarat" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deskripsi" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recylerview_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tabdetail"
+                    android:background="@color/white"
+                    android:paddingTop="5dp" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -256,74 +127,51 @@
                             />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    android:layout_margin="2dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/desk"
-                            android:layout_width="60dp"
-                            android:layout_height="14dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="12dp"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="5dp"
-                            android:text="Ringkasan"
-                            android:textAppearance="@style/foto"
-                            android:gravity="center_vertical"
-                            />
-                        <TextView
-                            android:id="@+id/lorem_ipsum"
-                            android:layout_width="326dp"
-                            android:layout_height="69dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="11dp"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="6dp"
-                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                            android:textAppearance="@style/lorem_ipsum"
-                            android:gravity="center_vertical"
-                            />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="49dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    android:layout_margin="2dp">
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:layout_margin="2dp">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="49dp"
-                        android:orientation="vertical">
-                        <CheckBox
-                            android:id="@+id/checkBox"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Apakah Anda Butuh Pemandu Wisata" />
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/rp_50xxxxx_"
+                            android:layout_width="136dp"
+                            android:layout_height="21dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="11dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="15dp"
+                            android:text="Rp 50xxxxx / Orang / 3 Hari"
+                            android:textAppearance="@style/rp_50xxxxx_"
+                            android:gravity="center_horizontal|center_vertical"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="49dp">
+                            <Button
+                                android:id="@+id/btntambah"
+                                android:layout_width="55dp"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="200dp"
+                                android:textAppearance="@style/LoginTitle"
+                                android:padding="10dp"
+                                android:drawableTop="@drawable/ic_supermarket2"
+                                android:background="@color/colorPrimary"
+                                android:layout_alignParentBottom="true"/>
+                        </LinearLayout>
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-                <Button
-                    android:id="@+id/btntambah"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:textAppearance="@style/LoginTitle"
-                    android:textSize="16sp"
-                    android:text="Tambah Ke Keranjang"
-                    android:textColor="@android:color/white"
-                    android:background="@color/colorPrimary"
-                    android:layout_alignParentBottom="true"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
     </ScrollView>
 
 
