@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.travia.databinding.ActivityLoginBinding
+import com.travia.model.Users
 import com.travia.utils.LoadingDialogUtil
 import com.travia.utils.TAG_GOOGLE_CLIENT_ID
 import com.travia.utils.showToast
@@ -25,6 +26,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var loadingDialog: LoadingDialogUtil
     private lateinit var ref: FirebaseDatabase
+
+    private lateinit var sharedPrefHelper: SharedPrefHelper
 
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var gso: GoogleSignInOptions
@@ -40,6 +43,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun init() {
         loadingDialog = LoadingDialogUtil(this)
+
+        sharedPrefHelper = SharedPrefHelper(context = this)
 
         //init Firebase Auth
         auth = FirebaseAuth.getInstance()
@@ -106,18 +111,8 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Log.d(TAG, "loginByEmailPassword: login success")
-                    showToast(this, "Login berhasil")
-                    loadingDialog.dismiss()
 
-                    startActivity(Intent(this, MainActivity::class.java))
-                    finish()
-
-                    /**
-                     * TODO : Check user login role
-                     *          if user ->  then go to wisatawan layout
-                     *          else -> then go to mitra layout
-                     */
+                    validasi()
 
                 } else {
                     Log.d(TAG, "loginByEmailPassword: failed to login : ${task.exception}")
@@ -167,9 +162,13 @@ class LoginActivity : AppCompatActivity() {
         ref.getReference("users").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 var user = false
+
+                var users: Users? = null
+
                 for (h in snapshot.children) {
                     if (auth.currentUser!!.uid == h.key) {
                         user = true
+                        users = h.getValue(Users::class.java)
                     }
                 }
 //                loadingDialog.dismiss()
@@ -181,7 +180,9 @@ class LoginActivity : AppCompatActivity() {
                         )
                     )
                 } else {
-                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+
+                    saveState(user = users)
+
                 }
                 loadingDialog.dismiss()
                 finish()
@@ -192,6 +193,15 @@ class LoginActivity : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
         })
+    }
+
+    private fun saveState(user: Users?) {
+        if (user != null){
+            sharedPrefHelper.setPreferences(uuid = user.uid, user_role = user.role)
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            finish()
+        }
+        return
     }
 
     companion object {

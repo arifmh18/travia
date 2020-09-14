@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener
 import com.travia.ActivityEditProfile
 import com.travia.LoginActivity
 import com.travia.R
+import com.travia.SharedPrefHelper
 import com.travia.databinding.FragmentProfilBinding
 import com.travia.model.Users
 import com.travia.ui.mitra.add_destination.AddDestinationActivity
@@ -30,6 +31,8 @@ class ProfilFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentProfilBinding
     private lateinit var ref: FirebaseDatabase
+
+    private lateinit var sharedPrefHelper: SharedPrefHelper
 
     private lateinit var mContext: Context
 
@@ -51,8 +54,12 @@ class ProfilFragment : Fragment() {
     }
 
     private fun init() {
+
+        sharedPrefHelper = SharedPrefHelper(context = requireContext())
+
         binding.apply {
             btnLogout.setOnClickListener {
+                sharedPrefHelper.deletePreferences()
                 auth.signOut()
                 startActivity(Intent(context, LoginActivity::class.java))
                 requireActivity().finish()

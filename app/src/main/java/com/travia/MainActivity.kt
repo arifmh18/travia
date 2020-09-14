@@ -2,6 +2,7 @@ package com.travia
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var binding: ActivityMainBinding
+
+    private lateinit var sharedPrefHelper: SharedPrefHelper
 
 //
 //    val menuText = arrayOf("Beranda", "Keranjang", "Pesan", "Profil")
@@ -42,21 +45,26 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         fab.setOnClickListener { view ->
             startActivity(Intent(this, ListPembayaran::class.java))
         }
-//        val adapter = ViewPagerAdapter(this)
-//        view_pager.adapter = adapter
-//        TabLayoutMediator(
-//            tabLayout,
-//            view_pager
-//        ) { tab, position ->
-//            tab.text = menuText[position]
-//            tab.icon = ResourcesCompat.getDrawable(resources, menuIcon[position], null)
-//        }.attach()
     }
 
     private fun init() {
+
+        sharedPrefHelper = SharedPrefHelper(context =  this)
+
+        val user_role = sharedPrefHelper.getPrefencesRole()
+        Log.d(TAG, "init: $user_role")
+
         binding.apply {
             bottomNavMain.setOnNavigationItemSelectedListener(this@MainActivity)
             bottomNavMain.selectedItemId = R.id.menuHome
+
+            if (user_role == "Mitra Usaha" || user_role == "Pemandu Wisata"){
+//                bottomNavMain.menu.removeItem(R.id.menuCart)
+//                bottomNavMain.menu.removeItem(R.id.menuMessage)
+                bottomNavMain.menu.findItem(R.id.menuCart).isVisible = false
+                bottomNavMain.menu.findItem(R.id.menuMessage).isVisible = false
+                fab.hide()
+            }
         }
     }
 
@@ -91,5 +99,9 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             }
         }
         return false
+    }
+
+    companion object {
+        var TAG = MainActivity::class.java.simpleName
     }
 }

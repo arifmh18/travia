@@ -27,7 +27,7 @@
                     android:id="@+id/homeCardSearch"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="8"
+                    android:layout_weight="10"
                     app:cardCornerRadius="4dp"
                     app:cardElevation="0dp">
 
@@ -60,24 +60,6 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
-                <View
-                    android:layout_width="8dp"
-                    android:layout_height="match_parent"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_baseline_favorite_24"/>
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_baseline_notifications_24"/>
 
             </LinearLayout>
 
