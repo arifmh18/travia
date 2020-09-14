@@ -12,7 +12,9 @@ data class WisataEntity(
     val harga: String,
     val video_link: String,
     val kota: String,
+    val latitude: String,
+    val longtitude: String,
     val rekomendasi: Boolean = false
 ) {
-    constructor() : this("","","","","","","", false)
+    constructor() : this("","","","","","","","","", false)
 }

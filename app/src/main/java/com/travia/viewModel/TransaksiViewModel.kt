@@ -24,4 +24,8 @@ class TransaksiViewModel() : ViewModel() {
         repository.deleteAll()
         repository.insertAll(transaksi)
     }
+
+    fun update(transaksiEntity: TransaksiEntity)= viewModelScope.launch {
+        repository.update(transaksiEntity)
+    }
 }

@@ -1,10 +1,7 @@
 package com.travia.database.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.travia.database.entity.TransaksiEntity
 import com.travia.database.entity.WisataEntity
 
@@ -18,5 +15,8 @@ interface TransaksiDao {
 
     @Query("DELETE FROM transaksi")
     suspend fun deleteAll()
+
+    @Update(entity = TransaksiEntity::class)
+    suspend fun updateTransaksi(transaksi: TransaksiEntity)
 
 }

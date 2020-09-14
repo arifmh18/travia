@@ -38,15 +38,35 @@
             android:textAppearance="@style/LoginTitle"
             android:textSize="12sp"
             android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp" />
 
-        <ImageView
-            android:id="@+id/ivMoreDestinationItem"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_more_horiz_24"
-            android:layout_gravity="end"
-            android:layout_margin="8dp"/>
+            android:layout_marginHorizontal="8dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/shop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bordered"
+                android:padding="5dp"
+                android:src="@drawable/ic_smart_cart" />
+
+            <ImageView
+                android:id="@+id/ivMoreDestinationItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center|end"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_baseline_more_horiz_24" />
+        </RelativeLayout>
 
     </LinearLayout>
 

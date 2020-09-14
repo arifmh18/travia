@@ -9,7 +9,7 @@ import android.view.View
 import android.view.LayoutInflater
 import kotlinx.android.synthetic.main.item_destination.view.*
 
-class DestinationAdapter(private val context: Context): RecyclerView.Adapter<DestinationAdapter.ViewHolder> () {
+class DestinationAdapter(private val context: Context, private val listener: (WisataModel)->Unit): RecyclerView.Adapter<DestinationAdapter.ViewHolder> () {
 
     private var destinationList = emptyList<WisataModel>()
 
@@ -19,15 +19,18 @@ class DestinationAdapter(private val context: Context): RecyclerView.Adapter<Des
     )
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(destinationList[position])
+        holder.bind(destinationList[position], listener)
     }
 
     override fun getItemCount(): Int = destinationList.size
 
     class ViewHolder(private val containerView: View): RecyclerView.ViewHolder(containerView) {
-        fun bind(item: WisataModel){
+        fun bind(item: WisataModel, listener: (WisataModel) -> Unit){
             containerView.tvNameDestinationItem.text = item.nama
             containerView.tvPriceDestinationItem.text = item.harga
+            containerView.shop.setOnClickListener {
+                listener(item)
+            }
         }
     }
 

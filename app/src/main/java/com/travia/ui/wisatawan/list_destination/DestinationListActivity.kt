@@ -41,7 +41,9 @@ class DestinationListActivity : AppCompatActivity() {
             binding.tbDestinationList.title = intent.getString(TOOLBAR_TITLE)
         }
 
-        adapter = DestinationAdapter(this)
+        adapter = DestinationAdapter(this){
+
+        }
 
         binding.apply {
             tbDestinationList.setNavigationOnClickListener {

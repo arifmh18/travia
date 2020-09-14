@@ -72,7 +72,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         database = FirebaseDatabase.getInstance()
 
-        adapter = DestinationAdapter(context = requireContext())
+        adapter = DestinationAdapter(context = requireContext()){
+
+        }
 
         binding.apply {
             carouselViewHome.setImageListener(imageListener)
@@ -130,6 +132,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
                             item.harga,
                             item.video_link,
                             item.location.name,
+                            item.location.latitude,
+                            item.location.longitude,
                             item.rekomendasi
                         )
                         wisatas.add(data)

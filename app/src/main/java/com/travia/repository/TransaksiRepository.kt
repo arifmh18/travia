@@ -14,4 +14,8 @@ class TransaksiRepository(private val dao: TransaksiDao) {
     suspend fun deleteAll(){
         dao.deleteAll()
     }
+
+    suspend fun update(transaksiEntity: TransaksiEntity){
+        dao.updateTransaksi(transaksiEntity)
+    }
 }
