@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DetailWisata">
+    tools:context=".ui.wisatawan.list_destination.DetailWisata">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -80,7 +80,6 @@
                     android:id="@+id/tabdetail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/barSearch"
                     android:background="@color/white">
 
                     <com.google.android.material.tabs.TabItem
@@ -105,13 +104,13 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="200dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp"
                     android:layout_margin="2dp">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="130dp"
+                        android:layout_height="200dp"
                         android:orientation="vertical">
                         <TextView
                             android:id="@+id/maps"
@@ -125,6 +124,20 @@
                             android:textAppearance="@style/foto"
                             android:gravity="center_vertical"
                             />
+                        <FrameLayout
+                            android:id="@+id/flCulinaryMapDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="160dp"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+                        <TextView
+                            android:id="@+id/tvCulinaryLocationDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Deskripsi"
+                            android:textAppearance="@style/LoginTitle"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp"/>
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -139,13 +152,12 @@
                         android:layout_height="49dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:id="@+id/rp_50xxxxx_"
+                            android:id="@+id/rp"
                             android:layout_width="136dp"
-                            android:layout_height="21dp"
+                            android:layout_height="match_parent"
                             android:layout_alignParentLeft="true"
                             android:layout_marginLeft="11dp"
                             android:layout_alignParentTop="true"
-                            android:layout_marginTop="15dp"
                             android:text="Rp 50xxxxx / Orang / 3 Hari"
                             android:textAppearance="@style/rp_50xxxxx_"
                             android:gravity="center_horizontal|center_vertical"
@@ -157,7 +169,7 @@
                                 android:id="@+id/btntambah"
                                 android:layout_width="55dp"
                                 android:layout_height="50dp"
-                                android:layout_marginLeft="200dp"
+                                android:layout_marginLeft="150dp"
                                 android:textAppearance="@style/LoginTitle"
                                 android:padding="10dp"
                                 android:drawableTop="@drawable/ic_supermarket2"
