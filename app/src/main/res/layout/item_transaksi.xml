@@ -1,66 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="5dp">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgT"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="10dp"
-        android:src="@drawable/wisata_pujon_kidul"
-        app:civ_border_color="@color/colorAccent"
-        app:civ_border_width="1dp" />
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/txtTNama"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/secular_one_regular"
-            android:text="@string/app_name"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgT"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/wisata_pujon_kidul"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="1dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/minus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_remove_24"
-                android:background="@color/colorPrimary"
-                android:contentDescription="minus" />
-            <TextView
-                android:id="@+id/jumlah"
-                android:layout_width="75dp"
-                android:layout_height="match_parent"
-                android:text="100"
-                android:gravity="center"/>
-            <ImageButton
-                android:id="@+id/plus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_add_24"
-                android:background="@color/colorPrimary"
-                android:contentDescription="plus" />
-        </LinearLayout>
-        <TextView
-            android:id="@+id/txtTharga"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:text="Rp 100.000"/>
-    </LinearLayout>
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
 
-</RelativeLayout>
+            <TextView
+                android:id="@+id/txtTNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/secular_one_regular"
+                android:text="@string/app_name"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageButton
+                    android:id="@+id/minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:contentDescription="minus"
+                    android:src="@drawable/ic_remove_24" />
+
+                <TextView
+                    android:id="@+id/txtTjumlah"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="100" />
+
+                <ImageButton
+                    android:id="@+id/plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:contentDescription="plus"
+                    android:src="@drawable/ic_baseline_add_24" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtTharga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rp 100.000"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

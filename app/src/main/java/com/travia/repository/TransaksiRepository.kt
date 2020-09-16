@@ -11,11 +11,15 @@ class TransaksiRepository(private val dao: TransaksiDao) {
         dao.insertAll(transaksi)
     }
 
-    suspend fun deleteAll(){
+    suspend fun deleteAll() {
         dao.deleteAll()
     }
 
-    suspend fun update(transaksiEntity: TransaksiEntity){
+    suspend fun update(transaksiEntity: TransaksiEntity) {
         dao.updateTransaksi(transaksiEntity)
+    }
+
+    suspend fun insert(transaksiEntity: TransaksiEntity) {
+        dao.insert(transaksiEntity)
     }
 }

@@ -13,6 +13,9 @@ interface TransaksiDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(transaksi: List<TransaksiEntity>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(transaksi: TransaksiEntity)
+
     @Query("DELETE FROM transaksi")
     suspend fun deleteAll()
 
