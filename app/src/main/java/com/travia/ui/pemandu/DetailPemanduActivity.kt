@@ -75,6 +75,8 @@ class DetailPemanduActivity : AppCompatActivity() {
                             item.harga,
                             item.video_link,
                             item.location.name,
+                            item.location.latitude,
+                            item.location.longitude,
                             item.rekomendasi
                         )
                         nama.add(item.nama)
