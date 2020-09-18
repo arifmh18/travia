@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -25,12 +26,14 @@ import com.travia.ui.mitra.add_destination.AddDestinationActivity
 import com.travia.ui.mitra.add_equipment.AddEquipmentActivity
 import com.travia.utils.hide
 import com.travia.utils.show
+import com.travia.viewModel.TransaksiViewModel
 
 class ProfilFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentProfilBinding
     private lateinit var ref: FirebaseDatabase
+    private val viewModel by viewModels<TransaksiViewModel>()
 
     private lateinit var sharedPrefHelper: SharedPrefHelper
 
@@ -50,6 +53,7 @@ class ProfilFragment : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         ref = FirebaseDatabase.getInstance()
+        viewModel.init(requireContext())
         init()
     }
 
@@ -60,6 +64,7 @@ class ProfilFragment : Fragment() {
         binding.apply {
             btnLogout.setOnClickListener {
                 sharedPrefHelper.deletePreferences()
+                viewModel.destroy()
                 auth.signOut()
                 startActivity(Intent(context, LoginActivity::class.java))
                 requireActivity().finish()

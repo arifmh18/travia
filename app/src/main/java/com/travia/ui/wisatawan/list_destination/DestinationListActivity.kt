@@ -1,6 +1,8 @@
 package com.travia.ui.wisatawan.list_destination
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -10,16 +12,19 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.travia.R
 import com.travia.WisataModel
 import com.travia.database.entity.TransaksiEntity
 import com.travia.databinding.ActivityDestinationListBinding
+import com.travia.ui.fragment.KeranjangFragment
 import com.travia.utils.Auth
 import com.travia.utils.hide
+import com.travia.utils.showToast
 import com.travia.viewModel.TransaksiViewModel
-import kotlinx.android.synthetic.main.fragment_pesan.*
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.random.Random
+
 
 class DestinationListActivity : AppCompatActivity() {
 
@@ -53,22 +58,63 @@ class DestinationListActivity : AppCompatActivity() {
 
         adapter = DestinationAdapter(this) { model ->
             viewModel.allTransaksi.observe(this, Observer { list ->
-                val key: String = "kd" + System.currentTimeMillis()
-                val kd: String = "Tran" + Random.nextInt(0, 9999) + "Kd" + Random.nextInt(0, 9999)
+                val kd: String = "Tran ${Random.nextInt(0, 9999)} kd ${Random.nextInt(0, 9999)}"
                 if (list.count() == 0) {
-                    val jumlah = 1
                     val data = TransaksiEntity(
-                        key,
+                        model.uuid,
                         kd,
                         Auth().currentNow().uid,
                         model.nama,
-                        jumlah,
-                        jumlah * model.harga.toInt(),
+                        1,
+                        1 * model.harga.toInt(),
+                        model.harga,
                         false,
                         Date().toString(),
-                        model.gambar!![0]
+                        "Tidak"
                     )
                     viewModel.insert(data)
+                } else {
+                    var update = false
+                    var trans: String = ""
+                    for (h in list) {
+                        trans = h.kd_tranksasi
+                        if (h.key == model.uuid) {
+//                             val data = TransaksiEntity(
+//                                h.key,
+//                                h.kd_tranksasi,
+//                                Auth().currentNow().uid,
+//                                model.nama,
+//                                h.jumlah + 1,
+//                                (h.jumlah +1) * model.harga.toInt(),
+//                                model.harga,
+//                                false,
+//                                Date().toString(),
+//                                "Tidak"
+//                            )
+//                            viewModel.update(data)
+//                            Log.d("Sudah : ", h.jumlah.toString())
+//                            startActivity(Intent(this, KeranjangFragment::class.java))
+//                            finish()
+                            showToast(this, "Wisata Sudah Ada diKeranjang")
+                            update = true
+                        }
+                    }
+                    if (!update) {
+
+                        val data = TransaksiEntity(
+                            model.uuid,
+                            trans,
+                            Auth().currentNow().uid,
+                            model.nama,
+                            1,
+                            (1 * model.harga.toInt()),
+                            model.harga,
+                            false,
+                            Date().toString(),
+                            "Tidak"
+                        )
+                        viewModel.insert(data)
+                    }
                 }
             })
         }
@@ -102,7 +148,11 @@ class DestinationListActivity : AppCompatActivity() {
                     }
 
                     override fun onCancelled(error: DatabaseError) {
-                        Toast.makeText(this@DestinationListActivity, error.message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            this@DestinationListActivity,
+                            error.message,
+                            Toast.LENGTH_SHORT
+                        ).show()
                         binding.pbLoadDestinationList.hide()
                     }
                 })
@@ -121,7 +171,11 @@ class DestinationListActivity : AppCompatActivity() {
                     }
 
                     override fun onCancelled(error: DatabaseError) {
-                        Toast.makeText(this@DestinationListActivity, error.message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            this@DestinationListActivity,
+                            error.message,
+                            Toast.LENGTH_SHORT
+                        ).show()
                         binding.pbLoadDestinationList.hide()
                     }
                 })

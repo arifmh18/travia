@@ -19,6 +19,9 @@ interface TransaksiDao {
     @Query("DELETE FROM transaksi")
     suspend fun deleteAll()
 
+    @Query("DELETE FROM transaksi WHERE `key` = :query")
+    suspend fun delete(query: String)
+
     @Update(entity = TransaksiEntity::class)
     suspend fun updateTransaksi(transaksi: TransaksiEntity)
 

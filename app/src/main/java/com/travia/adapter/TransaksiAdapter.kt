@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.item_transaksi.view.*
 
 class TransaksiAdapter(
     private val context: Context, private val listener: (
-        TransaksiEntity
+        TransaksiEntity, status: Int
     ) -> Unit
 ) : RecyclerView.Adapter<TransaksiAdapter.ViewHolders>() {
 
@@ -33,13 +33,23 @@ class TransaksiAdapter(
     }
 
     class ViewHolders(private val container: View) : RecyclerView.ViewHolder(container) {
-        fun bind(item: TransaksiEntity, listener: (TransaksiEntity) -> Unit) {
+        fun bind(item: TransaksiEntity, listener: (TransaksiEntity, status: Int) -> Unit) {
             container.apply {
-                Glide.with(context).load(item.foto).into(imgT)
+                if (item.foto != "Tidak") {
+                    Glide.with(context).load(item.foto).into(imgT)
+                }
                 txtTNama.text = item.nama
-                txtTharga.text = item.total.toString()
                 txtTjumlah.text = item.jumlah.toString()
-                listener(item)
+                txtTTotal.text = item.total.toString()
+                plus.setOnClickListener {
+                    listener(item, 1)
+                }
+                minus.setOnClickListener {
+                    listener(item, 2)
+                }
+                deleteThis.setOnClickListener {
+                    listener(item, 3)
+                }
             }
         }
     }

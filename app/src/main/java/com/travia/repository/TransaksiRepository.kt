@@ -22,4 +22,8 @@ class TransaksiRepository(private val dao: TransaksiDao) {
     suspend fun insert(transaksiEntity: TransaksiEntity) {
         dao.insert(transaksiEntity)
     }
+
+    suspend fun delete(key: String) {
+        dao.delete(key)
+    }
 }

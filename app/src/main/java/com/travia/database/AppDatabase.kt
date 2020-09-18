@@ -11,7 +11,7 @@ import com.travia.database.entity.WisataEntity
 
 @Database(
     entities = [WisataEntity::class, TransaksiEntity::class],
-    version = 2,
+    version = 5,
     exportSchema = false
 )
 abstract class AppDatabase:RoomDatabase() {

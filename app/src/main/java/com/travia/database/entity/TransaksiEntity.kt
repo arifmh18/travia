@@ -11,9 +11,10 @@ data class TransaksiEntity(
     val nama: String,
     val jumlah: Int,
     val total: Int,
+    val harga: String,
     val bayar: Boolean = false,
     val tanggal: String,
     val foto: String
 ) {
-    constructor() : this("", "", "", "", 0, 0, false, "", "")
+    constructor() : this("", "", "", "", 0, 0, "", false, "", "")
 }

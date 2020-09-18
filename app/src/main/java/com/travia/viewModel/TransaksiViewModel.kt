@@ -25,11 +25,19 @@ class TransaksiViewModel() : ViewModel() {
         repository.insertAll(transaksi)
     }
 
+    fun destroy() = viewModelScope.launch {
+        repository.deleteAll()
+    }
+
     fun update(transaksiEntity: TransaksiEntity) = viewModelScope.launch {
         repository.update(transaksiEntity)
     }
 
     fun insert(transaksiEntity: TransaksiEntity) = viewModelScope.launch {
         repository.insert(transaksiEntity)
+    }
+
+    fun delete(key: String) = viewModelScope.launch {
+        repository.delete(key)
     }
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,11 +17,56 @@
         android:textColor="@color/white"
         android:textSize="25sp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_keranjang"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/textView9"
-        android:layout_margin="8dp" />
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_keranjang"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/textView9"
+            android:layout_margin="8dp"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/judul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/btnCheckout"
+                android:fontFamily="@font/secular_one_regular"
+                android:text="Total Bayar : "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ttlJumlah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/judul"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/btnCheckout"
+                android:fontFamily="@font/secular_one_regular"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/btnCheckout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/bordered"
+                android:text="CheckOut"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </LinearLayout>
 
 </RelativeLayout>
