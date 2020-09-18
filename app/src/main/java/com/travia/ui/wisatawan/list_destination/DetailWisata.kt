@@ -3,6 +3,8 @@ package com.travia.ui.wisatawan.list_destination
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.bumptech.glide.Glide
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -10,6 +12,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.tabs.TabLayout
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -17,12 +20,14 @@ import com.google.firebase.database.ValueEventListener
 import com.travia.R
 import com.travia.WisataModel
 import com.travia.databinding.ActivityDetailWisataBinding
+import kotlinx.android.synthetic.main.activity_detail_wisata.*
+import kotlinx.android.synthetic.main.fragment_deskripsi.*
 
 
 class DetailWisata: AppCompatActivity(), OnMapReadyCallback {
     private lateinit var binding: ActivityDetailWisataBinding
     private lateinit var database: FirebaseDatabase
-
+    var fragment: Fragment? = null
     private lateinit var mMap: GoogleMap
 
     private var id: String? = null
@@ -32,6 +37,29 @@ class DetailWisata: AppCompatActivity(), OnMapReadyCallback {
         setContentView(binding.root)
 
         init()
+
+        tabdetail!!.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+
+                when (tab.position) {
+                    0 -> fragment=ReqFragment ()
+                    1 -> fragment= DeskripsiFragment ()
+
+                }
+                val fm = supportFragmentManager
+                val ft = fm.beginTransaction()
+                ft.replace(R.id.recylerview_detail, fragment!!)
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                ft.commit()
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab) {
+
+            }
+        })
     }
     private fun init(){
         val intent = intent.extras
@@ -99,6 +127,6 @@ class DetailWisata: AppCompatActivity(), OnMapReadyCallback {
 
         mMap = map
         getDetailWisata(id = id)
-
+//halo
     }
 }

@@ -19,6 +19,7 @@ class DestinationAdapter(private val context: Context): RecyclerView.Adapter<Des
             .inflate(R.layout.item_destination, parent, false)
     )
 
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(destinationList[position])
     }
