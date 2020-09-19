@@ -137,7 +137,15 @@ class SetScheduleDestinationActivity : AppCompatActivity(), AdapterSetSchedule.L
 
         var photoUrl = ArrayList<String>()
 
-        for (path in wisataModel?.gambar!!){
+        for ((i, path) in wisataModel?.gambar!!.withIndex()){
+
+            var limit = i+1
+
+            Log.d(TAG, "submitDestination: limit $limit")
+
+            Log.d(TAG, "submitDestination: gambar size ${wisataModel?.gambar!!.size}")
+
+            Log.d(TAG, "submitDestination: index in $i")
 
             BitmapFactory.decodeFile(path).also { bitmap ->
                 val bos = ByteArrayOutputStream()
@@ -161,25 +169,21 @@ class SetScheduleDestinationActivity : AppCompatActivity(), AdapterSetSchedule.L
                     if (task.isSuccessful){
                         Log.d(TAG, "submitDestination: ${task.result.toString()} successfull")
                         photoUrl.add(task.result.toString())
+
+                        if (limit == wisataModel!!.gambar!!.size){
+                            Log.d(TAG, "submitDestination: 2 index in $i")
+                            Log.d(TAG, "submitDestination: $wisataModel")
+                            wisataModel!!.gambar = photoUrl
+                            addDestination()
+                        }
                     }
                 }
                 Log.d(TAG, "submitDestination: ${urlTask.toString()}")
-//                storage.reference.child("wisata").child("photos").child(uid)
-//                    .putBytes(bitmapData)
-//                    .addOnCompleteListener { task ->
-//                        Log.d(TAG, "submitDestination: complete $url")
-//                    }
-//                    .addOnFailureListener { exception ->
-//                        Log.d(TAG, "submitDestination: ${exception.message}")
-//                        Toast.makeText(this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
-//                    }
-
             }
-
         }
+    }
 
-        wisataModel!!.gambar = photoUrl
-
+    private fun addDestination() {
         database.reference.child("wisata").child(auth.currentUser!!.uid)
             .setValue(wisataModel)
             .addOnCompleteListener { task ->
@@ -193,7 +197,6 @@ class SetScheduleDestinationActivity : AppCompatActivity(), AdapterSetSchedule.L
                     loadingDialogUtil.dismiss()
                 }
             }
-
     }
 
     private fun setScheduleList() {

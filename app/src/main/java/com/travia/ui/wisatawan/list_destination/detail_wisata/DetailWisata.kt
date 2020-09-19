@@ -1,8 +1,9 @@
-package com.travia.ui.wisatawan.list_destination
+package com.travia.ui.wisatawan.list_destination.detail_wisata
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -20,10 +21,14 @@ import com.travia.databinding.ActivityDetailWisataBinding
 
 
 class DetailWisata: AppCompatActivity(), OnMapReadyCallback {
+
     private lateinit var binding: ActivityDetailWisataBinding
     private lateinit var database: FirebaseDatabase
 
+    private lateinit var gambarAdapter: GambarAdapter
+
     private lateinit var mMap: GoogleMap
+
 
     private var id: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,9 +39,20 @@ class DetailWisata: AppCompatActivity(), OnMapReadyCallback {
         init()
     }
     private fun init(){
+
         val intent = intent.extras
         if (intent != null){
             id = intent.getString(ID_WISATA)
+        }
+
+        gambarAdapter = GambarAdapter(context = this)
+
+        val linearLayoutManager = LinearLayoutManager(this)
+        linearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
+
+        binding.recylerviewFoto.apply {
+            layoutManager = linearLayoutManager
+            adapter = gambarAdapter
         }
 
         database = FirebaseDatabase.getInstance()
@@ -69,7 +85,8 @@ class DetailWisata: AppCompatActivity(), OnMapReadyCallback {
         binding.apply {
 
             if (wisatamodel != null){
-                Glide.with(this@DetailWisata)
+
+                gambarAdapter.setGambarList(wisatamodel.gambar!!)
 
                 txtName.text = wisatamodel.nama
                 btnBack.setOnClickListener {
@@ -77,7 +94,6 @@ class DetailWisata: AppCompatActivity(), OnMapReadyCallback {
                 }
                 tvCulinaryLocationDetail.text = wisatamodel.location.name
                 rp.text = wisatamodel.harga
-
 
                 val latLngIndo = LatLng(wisatamodel.location.latitude.toDouble(), wisatamodel.location.longitude.toDouble())
 
