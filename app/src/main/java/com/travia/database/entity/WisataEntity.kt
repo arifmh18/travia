@@ -14,7 +14,8 @@ data class WisataEntity(
     val kota: String,
     val latitude: String,
     val longtitude: String,
-    val rekomendasi: Boolean = false
+    val rekomendasi: Boolean = false,
+    val gambar:String,
 ) {
-    constructor() : this("","","","","","","","","", false)
+    constructor() : this("","","","","","","","","", false,"")
 }

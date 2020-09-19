@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.travia.R
 import com.travia.database.entity.WisataEntity
 import kotlinx.android.synthetic.main.item_destination.view.*
@@ -29,6 +30,7 @@ class WisataAdapter(private val context: Context) :
         fun bind(item: WisataEntity) {
             containerView.tvNameDestinationItem.text = item.nama
             containerView.tvPriceDestinationItem.text = item.harga
+            Glide.with(containerView.context).load(item.gambar).into(containerView.ivDestinationItem)
         }
     }
 

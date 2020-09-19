@@ -77,7 +77,8 @@ class DetailPemanduActivity : AppCompatActivity() {
                             item.location.name,
                             item.location.latitude,
                             item.location.longitude,
-                            item.rekomendasi
+                            item.rekomendasi,
+                            item.gambar!![0]
                         )
                         nama.add(item.nama)
                         id_wisata.add(item.uuid)

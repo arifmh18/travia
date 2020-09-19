@@ -70,7 +70,7 @@ class DestinationListActivity : AppCompatActivity() {
                         model.harga,
                         false,
                         Date().toString(),
-                        "Tidak"
+                        model.gambar?.get(0)!!
                     )
                     viewModel.insert(data)
                 } else {

@@ -134,7 +134,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
                             item.location.name,
                             item.location.latitude,
                             item.location.longitude,
-                            item.rekomendasi
+                            item.rekomendasi,
+                            item.gambar!![0]
                         )
                         wisatas.add(data)
                     }

@@ -1,5 +1,6 @@
 package com.travia.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.travia.ListPembayaran
 import com.travia.adapter.TransaksiAdapter
 import com.travia.database.entity.TransaksiEntity
 import com.travia.databinding.FragmentKeranjangBinding
 import com.travia.utils.Auth
 import com.travia.viewModel.TransaksiViewModel
+import java.time.Instant
 import java.util.*
 
 class KeranjangFragment : Fragment() {
@@ -90,6 +93,9 @@ class KeranjangFragment : Fragment() {
         binding.apply {
             listKeranjang.layoutManager = LinearLayoutManager(context)
             listKeranjang.adapter = adapter
+            btnCheckout.setOnClickListener {
+                startActivity(Intent(requireContext(), ListPembayaran::class.java))
+            }
         }
 
     }
