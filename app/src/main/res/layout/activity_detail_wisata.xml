@@ -18,6 +18,26 @@
             android:layout_height="match_parent"
             android:background="@drawable/wisata_pujon_kidul" />
 
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ef_ic_arrow_back"
+            android:background="@drawable/bordered"
+            android:layout_margin="10dp"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wisata"
+            android:layout_below="@id/imageView"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/secular_one_regular"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
 
     </RelativeLayout>
     <ScrollView
@@ -149,7 +169,7 @@
                     android:layout_margin="2dp">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="49dp"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
                         <TextView
                             android:id="@+id/rp"

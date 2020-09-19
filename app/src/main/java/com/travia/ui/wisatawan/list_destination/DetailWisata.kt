@@ -71,6 +71,10 @@ class DetailWisata: AppCompatActivity(), OnMapReadyCallback {
             if (wisatamodel != null){
                 Glide.with(this@DetailWisata)
 
+                txtName.text = wisatamodel.nama
+                btnBack.setOnClickListener {
+                    finish()
+                }
                 tvCulinaryLocationDetail.text = wisatamodel.location.name
                 rp.text = wisatamodel.harga
 
