@@ -1,6 +1,7 @@
 package com.travia.ui.wisatawan.list_destination
 
 import android.content.Context
+import android.content.Intent
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.travia.R
@@ -30,6 +31,12 @@ class DestinationAdapter(private val context: Context, private val listener: (Wi
             containerView.tvPriceDestinationItem.text = item.harga
             containerView.shop.setOnClickListener {
                 listener(item)
+            }
+
+            containerView.setOnClickListener {
+                val intent = Intent(containerView.context, DetailWisata::class.java)
+                intent.putExtra(DetailWisata.ID_WISATA, item.uuid)
+                containerView.context.startActivity(intent)
             }
         }
     }

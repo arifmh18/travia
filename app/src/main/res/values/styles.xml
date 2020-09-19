@@ -177,7 +177,7 @@
     <style name="rp_50xxxxx_">
 
         <item name="android:textSize">
-            10sp
+            20sp
         </item>
 
         <item name="android:textColor">

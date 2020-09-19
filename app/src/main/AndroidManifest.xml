@@ -80,6 +80,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.wisatawan.list_equipment.DetailEquipmentActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.wisatawan.list_destination.DetailWisata"
+            android:theme="@style/AppThemeNoBar"/>
     </application>
 
 </manifest>
