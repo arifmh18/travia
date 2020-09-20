@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.wisatawan.list_destination.detail_wisata.DeskripsiWisataFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi"
+            android:textAppearance="@style/LoginTitle"
+            android:textSize="14sp"
+            android:textColor="@color/ef_grey"/>
+
+        <TextView
+            android:id="@+id/tv_description_detail_destination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/LoginTitle"
+            android:text="Deskripsi"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Peta dan Lokasi"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/LoginTitle"
+            android:textSize="14sp"
+            android:textColor="@color/ef_grey"/>
+
+        <TextView
+            android:id="@+id/tv_location_detail_destination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/LoginTitle"
+            android:text="Nama Lokasi"
+            android:textSize="16sp"/>
+
+        <FrameLayout
+            android:id="@+id/frame_maps_detail_destination"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

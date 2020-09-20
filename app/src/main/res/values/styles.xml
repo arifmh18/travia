@@ -210,7 +210,7 @@
     <style name="foto">
 
         <item name="android:textSize">
-            10sp
+            14sp
         </item>
 
         <item name="android:textColor">

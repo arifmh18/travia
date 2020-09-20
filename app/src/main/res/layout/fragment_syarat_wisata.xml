@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.wisatawan.list_destination.detail_wisata.SyaratWisataFragment">
+
+    <ProgressBar
+        android:id="@+id/pb_equipment_detail_destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_equipment_detail_destination"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/tv_no_requirement_detail_destination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textAlignment="center"
+        android:text="@string/tidak_ada_persyaratan_untuk_tempat_wisata_ini"
+        android:textAppearance="@style/LoginTitle"
+        android:textSize="16sp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:textColor="@color/ef_grey"/>
+
+</RelativeLayout>

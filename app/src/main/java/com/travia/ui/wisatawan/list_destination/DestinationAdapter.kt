@@ -9,6 +9,7 @@ import com.travia.WisataModel
 import android.view.View
 import android.view.LayoutInflater
 import com.bumptech.glide.Glide
+import com.travia.ui.wisatawan.list_destination.detail_wisata.DetailWisata
 import kotlinx.android.synthetic.main.item_destination.view.*
 
 class DestinationAdapter(private val context: Context, private val listener: (WisataModel)->Unit): RecyclerView.Adapter<DestinationAdapter.ViewHolder> () {
