@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,178 +7,215 @@
     android:orientation="vertical"
     tools:context=".ui.wisatawan.list_destination.detail_wisata.DetailWisata">
 
-    <RelativeLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="214dp"
-        tools:ignore="MissingConstraints">
+        android:layout_height="250dp">
 
-        <ImageView
-            android:id="@+id/imageView"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_detail_destination"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/wisata_pujon_kidul" />
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ef_ic_arrow_back"
-            android:background="@drawable/bordered"
-            android:layout_margin="10dp"
-            android:padding="5dp"/>
-
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Wisata"
-            android:layout_below="@id/imageView"
-            android:layout_marginTop="-40dp"
-            android:layout_marginStart="20dp"
-            android:fontFamily="@font/secular_one_regular"
-            android:textColor="@color/white"
-            android:textSize="20sp"/>
-
-    </RelativeLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:src="@drawable/placeholder"
+                android:scaleType="centerCrop"/>
 
-                <TextView
-                    android:id="@+id/foto"
-                    android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_black_transparent"/>
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/tb_detail_destination"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:titleTextColor="@android:color/white"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+                app:layout_collapseMode="pin"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/foto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Foto"
+                android:textSize="14sp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/ef_grey"
+                android:textAppearance="@style/LoginTitle"
+                android:gravity="center_vertical"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recylerview_foto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:background="@color/white" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout_detail_destination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabMode="fixed"
+                app:tabMaxWidth="0dp"
+                app:tabIndicatorColor="@color/colorPrimary"
+                android:layout_marginTop="8dp"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager_detail_destination"
+                android:layout_width="match_parent"
+                android:layout_marginVertical="8dp"
+                android:layout_height="300dp"/>
+
+            <!--                <androidx.recyclerview.widget.RecyclerView-->
+            <!--                    android:id="@+id/recylerview_detail"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_below="@+id/tabdetail"-->
+            <!--                    android:background="@color/white"-->
+            <!--                    android:paddingTop="5dp" />-->
+
+            <!--                <androidx.cardview.widget.CardView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="200dp"-->
+            <!--                    app:cardCornerRadius="8dp"-->
+            <!--                    app:cardElevation="4dp"-->
+            <!--                    android:layout_margin="2dp">-->
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="200dp"-->
+            <!--                        android:orientation="vertical">-->
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/maps"-->
+            <!--                            android:layout_width="60dp"-->
+            <!--                            android:layout_height="14dp"-->
+            <!--                            android:layout_alignParentLeft="true"-->
+            <!--                            android:layout_marginLeft="12dp"-->
+            <!--                            android:layout_alignParentTop="true"-->
+            <!--                            android:layout_marginTop="5dp"-->
+            <!--                            android:text="Peta/Lokasi"-->
+            <!--                            android:textAppearance="@style/foto"-->
+            <!--                            android:gravity="center_vertical"-->
+            <!--                            />-->
+            <!--                        <FrameLayout-->
+            <!--                            android:id="@+id/flCulinaryMapDetail"-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="160dp"-->
+            <!--                            android:name="com.google.android.gms.maps.SupportMapFragment"/>-->
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/tvCulinaryLocationDetail"-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:text="Deskripsi"-->
+            <!--                            android:textAppearance="@style/LoginTitle"-->
+            <!--                            android:textSize="14sp"-->
+            <!--                            android:layout_marginTop="4dp"/>-->
+
+            <!--                    </LinearLayout>-->
+            <!--                </androidx.cardview.widget.CardView>-->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:layout_margin="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Foto"
-                    android:textAppearance="@style/foto"
-                    android:gravity="center_vertical"/>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recylerview_foto"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="4dp"
-                    android:background="@color/white" />
-
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tabdetail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white">
-
-                    <com.google.android.material.tabs.TabItem
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Syarat" />
-
-                    <com.google.android.material.tabs.TabItem
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Deskripsi" />
-
-                </com.google.android.material.tabs.TabLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recylerview_detail"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/tabdetail"
-                    android:background="@color/white"
-                    android:paddingTop="5dp" />
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    android:layout_margin="2dp">
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/rp"
+                        android:layout_width="136dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="11dp"
+                        android:layout_alignParentTop="true"
+                        android:text="Rp 50xxxxx / Orang / 3 Hari"
+                        android:textAppearance="@style/rp_50xxxxx_"
+                        android:gravity="center_horizontal|center_vertical"
+                        />
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:orientation="vertical">
-                        <TextView
-                            android:id="@+id/maps"
-                            android:layout_width="60dp"
-                            android:layout_height="14dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="12dp"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="5dp"
-                            android:text="Peta/Lokasi"
-                            android:textAppearance="@style/foto"
-                            android:gravity="center_vertical"
-                            />
-                        <FrameLayout
-                            android:id="@+id/flCulinaryMapDetail"
-                            android:layout_width="match_parent"
-                            android:layout_height="160dp"
-                            android:name="com.google.android.gms.maps.SupportMapFragment"/>
-                        <TextView
-                            android:id="@+id/tvCulinaryLocationDetail"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Deskripsi"
+                        android:layout_height="49dp">
+                        <Button
+                            android:id="@+id/btntambah"
+                            android:layout_width="55dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="150dp"
                             android:textAppearance="@style/LoginTitle"
-                            android:textSize="14sp"
-                            android:layout_marginTop="4dp"/>
-
+                            android:padding="10dp"
+                            android:drawableTop="@drawable/ic_supermarket2"
+                            android:background="@color/colorPrimary"
+                            android:layout_alignParentBottom="true"/>
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="49dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    android:layout_margin="2dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:id="@+id/rp"
-                            android:layout_width="136dp"
-                            android:layout_height="match_parent"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="11dp"
-                            android:layout_alignParentTop="true"
-                            android:text="Rp 50xxxxx / Orang / 3 Hari"
-                            android:textAppearance="@style/rp_50xxxxx_"
-                            android:gravity="center_horizontal|center_vertical"
-                            />
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="49dp">
-                            <Button
-                                android:id="@+id/btntambah"
-                                android:layout_width="55dp"
-                                android:layout_height="50dp"
-                                android:layout_marginLeft="150dp"
-                                android:textAppearance="@style/LoginTitle"
-                                android:padding="10dp"
-                                android:drawableTop="@drawable/ic_supermarket2"
-                                android:background="@color/colorPrimary"
-                                android:layout_alignParentBottom="true"/>
-                        </LinearLayout>
+                </LinearLayout>
 
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
+        </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+    </androidx.core.widget.NestedScrollView>
 
-    </ScrollView>
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="214dp"-->
+<!--        tools:ignore="MissingConstraints">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@drawable/wisata_pujon_kidul" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/btnBack"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/ef_ic_arrow_back"-->
+<!--            android:background="@drawable/bordered"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:padding="5dp"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtName"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Wisata"-->
+<!--            android:layout_below="@id/imageView"-->
+<!--            android:layout_marginTop="-40dp"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:fontFamily="@font/secular_one_regular"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"/>-->
+
+<!--    </RelativeLayout>-->
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--        -->
+
+<!--    </ScrollView>-->
 
 
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

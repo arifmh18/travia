@@ -16,7 +16,7 @@
             android:id="@+id/ivDestinationItem"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:src="@drawable/wisata_pujon_kidul"
+            android:src="@drawable/placeholder"
             android:scaleType="centerCrop"/>
 
         <TextView

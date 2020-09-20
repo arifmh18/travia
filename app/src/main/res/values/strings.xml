@@ -40,5 +40,8 @@
     <string name="edit_destination">Edit Wisata</string>
     <string name="want_rent_equipment">Dimana anda ingin \nmenyewa peralatan ?</string>
     <string name="want_rent_vehicle">Dimana anda ingin \nmenyewa kendaraan ?</string>
+    <string name="requirement_name">requirement_name</string>
+    <string name="requirement_required">requirement_required</string>
+    <string name="tidak_ada_persyaratan_untuk_tempat_wisata_ini">Tidak ada persyaratan untuk tempat wisata ini</string>
 
 </resources>

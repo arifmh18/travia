@@ -16,7 +16,9 @@
         <ImageView
             android:id="@+id/ivCulinaryItem"
             android:layout_width="match_parent"
-            android:layout_height="140dp"/>
+            android:layout_height="140dp"
+            android:src="@drawable/placeholder"
+            android:scaleType="centerCrop"/>
 
         <LinearLayout
             android:layout_width="match_parent"

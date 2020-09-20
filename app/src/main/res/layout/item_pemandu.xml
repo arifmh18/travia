@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/wisata_pujon_kidul" />
+            android:src="@drawable/placeholder" />
 
         <TextView
             android:id="@+id/namaPemandu"
